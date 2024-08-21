@@ -1,49 +1,53 @@
-from PyQt5.QtWidgets import QApplication, QLabel, QWidget, QVBoxLayout, QMainWindow
+from PyQt5.QtWidgets import QApplication, QLabel, QWidget, QVBoxLayout
+from PyQt5.QtGui import QFont
 from PyQt5.QtCore import Qt
 import sys
-from updater import UpdateChecker  # Import the UpdateChecker class from update_checker.py
 
-class WelcomeWindow(QMainWindow):
+class WelcomeWindow(QWidget):
     def __init__(self):
         super().__init__()
         self.initUI()
         self.check_for_updates()  # Perform update check on initialization
 
     def initUI(self):
-        # Create a central widget and set layout
-        central_widget = QWidget()
-        layout = QVBoxLayout()
-        central_widget.setLayout(layout)
-        
-        # Welcome label
-        self.welcome_label = QLabel('Welcome to the Super SOC Hub', self)
-        self.welcome_label.setAlignment(Qt.AlignCenter)
-        layout.addWidget(self.welcome_label)
-        
-        # Update status label
-        self.update_status_label = QLabel('', self)  # Empty initially
-        self.update_status_label.setAlignment(Qt.AlignCenter)
-        self.update_status_label.setStyleSheet('font-size: 12px;')  # Smaller font size
-        layout.addWidget(self.update_status_label)
-        
-        # Set central widget and window properties
-        self.setCentralWidget(central_widget)
         self.setWindowTitle('Super SOC Hub')
-        self.setGeometry(100, 100, 300, 200)  # Adjust size and position as needed
+        self.setGeometry(300, 300, 300, 200)
+
+        self.layout = QVBoxLayout()
+
+        # Main welcome label
+        self.main_label = QLabel('Welcome to the Super SOC Hub', self)
+        self.main_label.setAlignment(Qt.AlignCenter)
+        self.layout.addWidget(self.main_label)
+
+        self.setLayout(self.layout)
         self.show()
 
     def check_for_updates(self):
-        # Create and start the UpdateChecker thread
-        repo = 'natedavidson89/SOC_Hub'  # Replace with your GitHub repo
-        self.update_checker = UpdateChecker(repo)
-        self.update_checker.update_checked.connect(self.on_update_checked)
-        self.update_checker.start()
+        # Simulating update checking logic
+        latest_release = {'updated': False}  # Replace this with actual update logic
+        self.on_update_checked(latest_release)
 
     def on_update_checked(self, latest_release):
-        if latest_release:
-            self.update_status_label.setText(f"Latest release: {latest_release['tag_name']}")
+        if latest_release and isinstance(latest_release, dict):
+            if latest_release.get('updated') is False:
+                update_message = "SOC Hub is up to date."
+            else:
+                latest_version = latest_release.get('tag_name')
+                if latest_version:
+                    update_message = f"Updating to {latest_version}..."
+                else:
+                    update_message = "Unexpected response: 'tag_name' not found."
         else:
-            self.update_status_label.setText("SOC Hub is up to date")
+            update_message = "Failed to check for updates."
+
+        # Add the update message to the window in smaller font
+        update_label = QLabel(update_message, self)
+        small_font = QFont()
+        small_font.setPointSize(6)  # Set a smaller font size
+        update_label.setFont(small_font)
+        update_label.setAlignment(Qt.AlignCenter)  # Center the text
+        self.layout.addWidget(update_label)  # Add the update label to the layout
 
 def main():
     app = QApplication(sys.argv)

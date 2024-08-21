@@ -50,7 +50,7 @@ class UpdateChecker(QThread):
     def launch_update_script(self):
         """Launch the updater_launcher.py script."""
         try:
-            subprocess.Popen([sys.executable, 'updater_launcher.py'], cwd='C:/Users/Nated/VSC Projects/SOC_Hub')
+            subprocess.Popen([sys.executable, 'update_launcher.py'], cwd='C:/Users/Nated/VSC Projects/SOC_Hub')
         except Exception as e:
             print(f"An error occurred while launching the update script: {e}")
 
@@ -76,13 +76,19 @@ class UpdateWindow(QWidget):
         self.update_checker.update_checked.connect(self.on_update_checked)
         self.update_checker.start()
 
-    def on_update_checked(self, update_info):
-        if update_info is None:
-            self.label.setText("Failed to fetch updates")
-        elif update_info.get('updated') is True:
-            self.label.setText("Update applied successfully. Restarting...")
-        elif update_info.get('updated') is False:
-            self.label.setText("SOC Hub is up to date")
+    def on_update_checked(self, latest_release):
+        if latest_release and isinstance(latest_release, dict):
+            latest_version = latest_release.get('tag_name')
+            if latest_version:
+                if latest_version != self.current_version:
+                    self.label.setText(f"Updating to {latest_version}...")
+                    # Call the update function here to download and apply the new release
+                else:
+                    self.label.setText("SOC Hub is up to date.")
+            else:
+                self.label.setText("Unexpected response: 'tag_name' not found.")
+        else:
+            self.label.setText("Failed to check for updates.")
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
