@@ -1,11 +1,29 @@
 import sys
 import os
-import subprocess
 import requests
 import zipfile
 from pathlib import Path
 
-def download_and_extract_update(repo, current_version):
+def get_current_version(version_file='version.txt'):
+    """Read the current version from version.txt."""
+    try:
+        if Path(version_file).exists():
+            with open(version_file, 'r') as file:
+                version = file.read().strip()
+                return version
+        else:
+            return None
+    except Exception as e:
+        print(f"An error occurred while reading {version_file}: {e}")
+        return None
+
+def download_and_extract_update(repo):
+    """Download and extract update if necessary."""
+    current_version = get_current_version()
+    if current_version is None:
+        print("version.txt is missing or cannot be read.")
+        sys.exit(1)
+
     url = f'https://api.github.com/repos/{repo}/releases/latest'
     try:
         response = requests.get(url)
@@ -31,6 +49,9 @@ def download_and_extract_update(repo, current_version):
 
             os.remove(zip_path)
 
+            # Update the version.txt file with the latest version
+            update_version_file(latest_version)
+
             # Restart the application
             restart_application()
         else:
@@ -40,6 +61,15 @@ def download_and_extract_update(repo, current_version):
         print(f"An error occurred: {e}")
         sys.exit(1)
 
+def update_version_file(new_version, version_file='version.txt'):
+    """Update the version.txt file with the new version."""
+    try:
+        with open(version_file, 'w') as file:
+            file.write(new_version)
+        print(f"Version updated to {new_version}.")
+    except Exception as e:
+        print(f"An error occurred while updating {version_file}: {e}")
+
 def restart_application():
     """Restart the application."""
     python = sys.executable
@@ -47,5 +77,4 @@ def restart_application():
 
 if __name__ == '__main__':
     repo = 'natedavidson89/SOC_Hub'
-    current_version = 'v1.0.0'
-    download_and_extract_update(repo, current_version)
+    download_and_extract_update(repo)
