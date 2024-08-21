@@ -2,6 +2,7 @@ from PyQt5.QtWidgets import QApplication, QLabel, QWidget, QVBoxLayout
 from PyQt5.QtGui import QFont
 from PyQt5.QtCore import Qt
 import sys
+import requests
 
 class WelcomeWindow(QWidget):
     def __init__(self):
@@ -20,34 +21,49 @@ class WelcomeWindow(QWidget):
         self.main_label.setAlignment(Qt.AlignCenter)
         self.layout.addWidget(self.main_label)
 
+        # Label for update status
+        self.update_label = QLabel('', self)
+        small_font = QFont()
+        small_font.setPointSize(8)  # Set a smaller font size
+        self.update_label.setFont(small_font)
+        self.update_label.setAlignment(Qt.AlignCenter)
+        self.layout.addWidget(self.update_label)  # Add the update label to the layout
+
         self.setLayout(self.layout)
         self.show()
 
     def check_for_updates(self):
-        # Simulating update checking logic
-        latest_release = {'updated': False}  # Replace this with actual update logic
-        self.on_update_checked(latest_release)
+        # Read the current version from version.txt
+        try:
+            with open('version.txt', 'r') as file:
+                current_version = file.read().strip()
+        except FileNotFoundError:
+            current_version = '0.0.0'  # Default version if file is not found
 
-    def on_update_checked(self, latest_release):
-        if latest_release and isinstance(latest_release, dict):
-            if latest_release.get('updated') is False:
+        # Fetch the latest release from GitHub
+        repo = 'natedavidson89/SOC_Hub'
+        url = f'https://api.github.com/repos/{repo}/releases/latest'
+        
+        try:
+            response = requests.get(url)
+            response.raise_for_status()
+            latest_release = response.json()
+            latest_version = latest_release['tag_name']
+            
+            # Compare versions and update the UI accordingly
+            if current_version == latest_version:
                 update_message = "SOC Hub is up to date."
             else:
-                latest_version = latest_release.get('tag_name')
-                if latest_version:
-                    update_message = f"Updating to {latest_version}..."
-                else:
-                    update_message = "Unexpected response: 'tag_name' not found."
-        else:
+                update_message = f"Updating to {latest_version}..."
+                # Trigger an update process here if needed
+                # self.download_latest_release(latest_release['zipball_url'])
+            
+        except requests.RequestException as e:
+            print(f"An error occurred: {e}")
             update_message = "Failed to check for updates."
 
-        # Add the update message to the window in smaller font
-        update_label = QLabel(update_message, self)
-        small_font = QFont()
-        small_font.setPointSize(6)  # Set a smaller font size
-        update_label.setFont(small_font)
-        update_label.setAlignment(Qt.AlignCenter)  # Center the text
-        self.layout.addWidget(update_label)  # Add the update label to the layout
+        # Update the UI with the result
+        self.update_label.setText(update_message)
 
 def main():
     app = QApplication(sys.argv)
