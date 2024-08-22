@@ -19,33 +19,15 @@ class UpdateChecker(QThread):
             response.raise_for_status()
             latest_release = response.json()
             latest_version = latest_release['tag_name']
-
-            if self.is_update_needed(latest_version):
-                self.download_latest_release(latest_release['zipball_url'])
-            else:
-                self.update_checked.emit({'updated': False})
+            self.update_checked.emit({
+                'latest_version': latest_version,
+                'latest_release': latest_release
+            })
         except requests.RequestException as e:
             print(f"An error occurred: {e}")
-            self.update_checked.emit(None)
-
-    def is_update_needed(self, latest_version):
-        return self.current_version != latest_version
-
-    def download_latest_release(self, download_url):
-        try:
-            response = requests.get(download_url, stream=True)
-            response.raise_for_status()
-
-            zip_path = 'latest_release.zip'
-            with open(zip_path, 'wb') as file:
-                for chunk in response.iter_content(chunk_size=8192):
-                    file.write(chunk)
-
-            self.update_checked.emit({'updated': True})
-            self.launch_update_script()
-        except requests.RequestException as e:
-            print(f"An error occurred during download: {e}")
-            self.update_checked.emit(None)
+            self.update_checked.emit({
+                'error': str(e)
+            })
 
     def launch_update_script(self):
         """Launch the updater_launcher.py script."""
@@ -64,35 +46,29 @@ class UpdateWindow(QWidget):
     def initUI(self):
         self.setWindowTitle("Update Checker")
         self.setGeometry(300, 300, 300, 200)
-        layout = QVBoxLayout()
-        self.label = QLabel("Checking for updates...", self)
-        self.label.setAlignment(Qt.AlignCenter)
-        layout.addWidget(self.label)
-        self.setLayout(layout)
-        self.show()
 
     def get_current_version(self):
         try:
             with open('version.txt', 'r') as file:
                 return file.read().strip()
         except FileNotFoundError:
-            return '0.0.0'  # Default to a very old version if the file is not found
+            return '0.0.0'
 
     def check_for_updates(self, repo):
         self.update_checker = UpdateChecker(repo, self.current_version)
-        self.update_checker.update_checked.connect(self.on_update_checked)
+        self.update_checker.update_checked.connect(self.handle_update_checked)
         self.update_checker.start()
 
-    def on_update_checked(self, update_info):
-        if update_info is None:
-            self.label.setText("Failed to fetch updates")
-        elif update_info.get('updated') is True:
-            self.label.setText("Update applied successfully. Restarting...")
-        elif update_info.get('updated') is False:
-            self.label.setText(f"SOC Hub is up to date (version {self.current_version})")
+    def handle_update_checked(self, update_info):
+        if 'error' in update_info:
+            print(f"Update check failed: {update_info['error']}")
+        else:
+            latest_version = update_info['latest_version']
+            print(f"Latest version: {latest_version}")
+            # Add logic to handle the update process here
 
-if __name__ == '__main__':
-    app = QApplication(sys.argv)
-    repo = 'natedavidson89/SOC_Hub'
-    ex = UpdateWindow(repo)
-    sys.exit(app.exec_())
+    def closeEvent(self, event):
+        if hasattr(self, 'update_checker') and self.update_checker.isRunning():
+            self.update_checker.quit()
+            self.update_checker.wait()
+        event.accept()
