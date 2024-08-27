@@ -45,7 +45,7 @@ class UpdateWindow(QWidget):
 
     def initUI(self):
         self.setWindowTitle("Update Checker")
-        self.setGeometry(300, 300, 300, 200)
+        self.setGeometry(200, 200, 200, 100)
 
     def get_current_version(self):
         try:
@@ -66,6 +66,9 @@ class UpdateWindow(QWidget):
             latest_version = update_info['latest_version']
             print(f"Latest version: {latest_version}")
             # Add logic to handle the update process here
+
+        # Close the update window after handling the update check
+        self.close()
 
     def closeEvent(self, event):
         if hasattr(self, 'update_checker') and self.update_checker.isRunning():
