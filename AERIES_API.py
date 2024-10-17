@@ -8,6 +8,7 @@ import re
 import yaml
 from credentialsInput import CredentialsInputDialog
 from PyQt5.QtWidgets import QApplication, QDialog
+import os
 
 def extract_double_underscore_values(html):
     # Use regex to find all occurrences of strings starting with __ and followed by | and a value
@@ -49,34 +50,48 @@ def find_elements_and_save_as_dictionary(html_content):
 
 class AeriesAPI:
     def __init__(self, ESY=False):
-        self.credentials = yaml.safe_load(open("credentials.yml", "r"))
-        self.aesopCredentials = self.credentials.get("AESOP", {})
-        self.aesopUsername = self.aesopCredentials.get("username", "")
-        self.aesopPassword = self.aesopCredentials.get("password", "")
-        self.aesopSchool = self.aesopCredentials.get("schoolNumber", "")
+        self.credentials_file = "credentials.yml"
+        self.credentials = self.load_credentials()
+        self.aeriesCredentials = self.credentials.get("aeries", {})
+        self.aeriesUsername = self.aeriesCredentials.get("username", "")
+        self.aeriesPassword = self.aeriesCredentials.get("password", "")
+        self.aeriesSchool = self.aeriesCredentials.get("schoolNumber", "")
 
-        if not self.aesopUsername or not self.aesopPassword or not self.aesopSchool:
+
+        if not self.aeriesUsername or not self.aeriesPassword or not self.aeriesSchool:
             self.collect_credentials()
 
         self.ESY = ESY
-        self.school = self.aesopSchool if self.ESY == False else f"2{self.aesopSchool}"
+        self.school = self.aeriesSchool if self.ESY == False else f"2{self.aeriesSchool}"
         self.database = "Special Ed" if self.ESY == False else "Summer/ESY"
         self.client = self.login()
+
+    def load_credentials(self):
+        if not os.path.exists(self.credentials_file):
+            with open(self.credentials_file, "w") as file:
+                yaml.dump({"aeries": {}}, file)
+            return {"aeries": {}}
+        else:
+            with open(self.credentials_file, "r") as file:
+                credentials = yaml.safe_load(file) or {}
+                if "aeries" not in credentials:
+                    credentials["aeries"] = {}
+            return credentials
 
     def collect_credentials(self):      
         app = QApplication([])
         dialog = CredentialsInputDialog()
         if dialog.exec_() == QDialog.Accepted:
-            self.aesopUsername = dialog.username
-            self.aesopPassword = dialog.password
-            self.aesopSchool = dialog.school
+            self.aeriesUsername = dialog.username
+            self.aeriesPassword = dialog.password
+            self.aeriesSchool = dialog.school
             self.save_credentials()
 
     def save_credentials(self):
-        self.credentials['AESOP'] = {
-            'username': self.aesopUsername,
-            'password': self.aesopPassword,
-            'schoolNumber': self.aesopSchool
+        self.credentials['aeries'] = {
+            'username': self.aeriesUsername,
+            'password': self.aeriesPassword,
+            'schoolNumber': self.aeriesSchool
         }
         with open("credentials.yml", "w") as file:
             yaml.dump(self.credentials, file)
@@ -102,8 +117,8 @@ class AeriesAPI:
             "SelectedYear": "2024-25",
             "ActiveDirectoryUsername": "0",
             "ReturnPage": "",
-            "Username_Aeries": self.aesopUsername,
-            "Password_Aeries": self.aesopPassword,
+            "Username_Aeries": self.aeriesUsername,
+            "Password_Aeries": self.aeriesPassword,
             "Database_Aeries": self.database,
             "Year_Aeries": "2024-2025",
             "btnSignIn_Aeries": "Sign In"
@@ -149,8 +164,8 @@ class AeriesAPI:
             "SelectedYear": "2024-2025",
             "ActiveDirectoryUsername": "0",
             "ReturnPage": "",
-            "Username_Aeries": self.aesopUsername,
-            "Password_Aeries": self.aesopPassword,
+            "Username_Aeries": self.aeriesUsername,
+            "Password_Aeries": self.aeriesPassword,
             "Database_Aeries": self.database,
             "Year_Aeries": "2024-2025",
             "btnSignIn_Aeries": "Sign In"
