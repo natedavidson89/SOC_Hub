@@ -2,18 +2,20 @@ from PyQt5.QtWidgets import QApplication, QLabel, QWidget, QVBoxLayout, QPushBut
 from PyQt5.QtGui import QFont
 from PyQt5.QtCore import Qt
 import sys
+import subprocess
+import os
 # from updater import UpdateWindow  # Import the UpdateWindow class
 from AERIES.AERIES_API import *
 from AERIES.classListWindow import *
 from AESOP.AESOP_API import *
-from updUpdaterCGPT import UpdateChecker
+# from AESOP.Update3 import *
 import yaml
 
 class WelcomeWindow(QWidget):
     def __init__(self):
         super().__init__()
         self.initUI()
-        test = UpdateChecker('natedavidson89/SOC_Hub', '0.0.3')  # Perform update check on initialization
+        
 
     def initUI(self):
         self.setWindowTitle('Super SOC Hub')
@@ -50,23 +52,21 @@ class WelcomeWindow(QWidget):
         self.setLayout(self.layout)
         self.show()
 
-    # def check_for_updates(self):
-    #     repo = 'natedavidson89/SOC_Hub'
-    #     self.update_window = UpdateWindow(repo)
-    #     self.update_window.show()
-    #     self.update_window.update_checker.update_checked.connect(self.handle_update_checked)
 
-    # def handle_update_checked(self, update_info):
-    #     if 'error' in update_info:
-    #         self.update_label.setText(f"Update check failed: {update_info['error']}")
-    #     else:
-    #         latest_version = update_info['latest_version']
-    #         if self.update_window.current_version != latest_version:
-    #             self.update_label.setText(f"New version {latest_version} available. Updating...")
-    #             # Call the download and install method
-    #             self.update_window.download_and_install_update(update_info['latest_release'])
-    #         else:
-    #             self.update_label.setText(f"SOC Hub is up to date! {latest_version}")
+
+
+
+    def handle_update_checked(self, update_info):
+        if 'error' in update_info:
+            self.update_label.setText(f"Update check failed: {update_info['error']}")
+        else:
+            latest_version = update_info['latest_version']
+            if self.update_window.current_version != latest_version:
+                self.update_label.setText(f"New version {latest_version} available. Updating...")
+                # Call the download and install method
+                self.update_window.download_and_install_update(update_info['latest_release'])
+            else:
+                self.update_label.setText(f"SOC Hub is up to date! {latest_version}")
 
     def openClassListWindow(self):
         self.aeriesAPI = AeriesAPI()
@@ -82,7 +82,17 @@ class WelcomeWindow(QWidget):
             self.update_window.close()
         event.accept()
 
+def check_for_updates():
+    # Path to Update3.py
+    update_script_path = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'Update3.py')
+    
+    # Call Update3.py
+    subprocess.run(['python', update_script_path], check=True)
+
+
+
 def main():
+    check_for_updates()
     app = QApplication(sys.argv)
     window = WelcomeWindow()
     window.show()
