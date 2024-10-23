@@ -16,8 +16,10 @@ class UpdateChecker(QThread):
         print("Checking for update....")
         print(self.current_version)
 
+
     def run(self):
         url = f'https://api.github.com/repos/{self.repo}/releases/latest'
+        print('looking for release info...')
         try:
             response = requests.get(url)
             response.raise_for_status()
@@ -27,6 +29,7 @@ class UpdateChecker(QThread):
                 'latest_version': latest_version,
                 'latest_release': latest_release
             })
+            print(f"Current version: {self.current_version} \nLatest version: {latest_version}")
         except requests.RequestException as e:
             print(f"An error occurred: {e}")
             self.update_checked.emit({
