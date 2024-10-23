@@ -541,6 +541,10 @@
   ('codeop',
    'C:\\Users\\Nated\\AppData\\Local\\Programs\\Python\\Python310\\lib\\codeop.py',
    'PYMODULE'),
+  ('commctrl',
+   'c:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\win32\\lib\\commctrl.py',
+   'PYMODULE'),
   ('concurrent',
    'C:\\Users\\Nated\\AppData\\Local\\Programs\\Python\\Python310\\lib\\concurrent\\__init__.py',
    'PYMODULE'),
@@ -1643,6 +1647,51 @@
    'PYMODULE'),
   ('pydoc_data.topics',
    'C:\\Users\\Nated\\AppData\\Local\\Programs\\Python\\Python310\\lib\\pydoc_data\\topics.py',
+   'PYMODULE'),
+  ('pythoncom',
+   'c:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\pythoncom.py',
+   'PYMODULE'),
+  ('pywin',
+   'c:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\Pythonwin\\pywin\\__init__.py',
+   'PYMODULE'),
+  ('pywin.dialogs',
+   'c:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\Pythonwin\\pywin\\dialogs\\__init__.py',
+   'PYMODULE'),
+  ('pywin.dialogs.list',
+   'c:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\Pythonwin\\pywin\\dialogs\\list.py',
+   'PYMODULE'),
+  ('pywin.dialogs.status',
+   'c:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\Pythonwin\\pywin\\dialogs\\status.py',
+   'PYMODULE'),
+  ('pywin.mfc',
+   'c:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\Pythonwin\\pywin\\mfc\\__init__.py',
+   'PYMODULE'),
+  ('pywin.mfc.dialog',
+   'c:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\Pythonwin\\pywin\\mfc\\dialog.py',
+   'PYMODULE'),
+  ('pywin.mfc.object',
+   'c:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\Pythonwin\\pywin\\mfc\\object.py',
+   'PYMODULE'),
+  ('pywin.mfc.thread',
+   'c:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\Pythonwin\\pywin\\mfc\\thread.py',
+   'PYMODULE'),
+  ('pywin.mfc.window',
+   'c:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\Pythonwin\\pywin\\mfc\\window.py',
+   'PYMODULE'),
+  ('pywin32_system32', '-', 'PYMODULE'),
+  ('pywintypes',
+   'c:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\win32\\lib\\pywintypes.py',
    'PYMODULE'),
   ('queue',
    'C:\\Users\\Nated\\AppData\\Local\\Programs\\Python\\Python310\\lib\\queue.py',
@@ -3395,6 +3444,94 @@
   ('websocket._utils',
    'c:\\Users\\Nated\\VSC '
    'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\websocket\\_utils.py',
+   'PYMODULE'),
+  ('win32com',
+   'c:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\win32com\\__init__.py',
+   'PYMODULE'),
+  ('win32com.client',
+   'c:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\win32com\\client\\__init__.py',
+   'PYMODULE'),
+  ('win32com.client.CLSIDToClass',
+   'c:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\win32com\\client\\CLSIDToClass.py',
+   'PYMODULE'),
+  ('win32com.client.build',
+   'c:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\win32com\\client\\build.py',
+   'PYMODULE'),
+  ('win32com.client.dynamic',
+   'c:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\win32com\\client\\dynamic.py',
+   'PYMODULE'),
+  ('win32com.client.gencache',
+   'c:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\win32com\\client\\gencache.py',
+   'PYMODULE'),
+  ('win32com.client.genpy',
+   'c:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\win32com\\client\\genpy.py',
+   'PYMODULE'),
+  ('win32com.client.makepy',
+   'c:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\win32com\\client\\makepy.py',
+   'PYMODULE'),
+  ('win32com.client.selecttlb',
+   'c:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\win32com\\client\\selecttlb.py',
+   'PYMODULE'),
+  ('win32com.client.util',
+   'c:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\win32com\\client\\util.py',
+   'PYMODULE'),
+  ('win32com.server',
+   'c:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\win32com\\server\\__init__.py',
+   'PYMODULE'),
+  ('win32com.server.dispatcher',
+   'c:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\win32com\\server\\dispatcher.py',
+   'PYMODULE'),
+  ('win32com.server.exception',
+   'c:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\win32com\\server\\exception.py',
+   'PYMODULE'),
+  ('win32com.server.policy',
+   'c:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\win32com\\server\\policy.py',
+   'PYMODULE'),
+  ('win32com.server.util',
+   'c:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\win32com\\server\\util.py',
+   'PYMODULE'),
+  ('win32com.shell',
+   'c:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\win32comext\\shell\\__init__.py',
+   'PYMODULE'),
+  ('win32com.shell.shellcon',
+   'c:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\win32comext\\shell\\shellcon.py',
+   'PYMODULE'),
+  ('win32com.universal',
+   'c:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\win32com\\universal.py',
+   'PYMODULE'),
+  ('win32com.util',
+   'c:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\win32com\\util.py',
+   'PYMODULE'),
+  ('win32con',
+   'c:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\win32\\lib\\win32con.py',
+   'PYMODULE'),
+  ('win32traceutil',
+   'c:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\win32\\lib\\win32traceutil.py',
+   'PYMODULE'),
+  ('winerror',
+   'c:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\win32\\lib\\winerror.py',
    'PYMODULE'),
   ('xml',
    'C:\\Users\\Nated\\AppData\\Local\\Programs\\Python\\Python310\\lib\\xml\\__init__.py',

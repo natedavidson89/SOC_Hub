@@ -11,7 +11,7 @@ from AESOP.AESOP_API import *
 import Update3
 import yaml
 
-CONFIG_FILE = 'config_path.txt'
+# CONFIG_FILE = 'config_path.txt'
 
 
 class WelcomeWindow(QWidget):
@@ -85,33 +85,33 @@ class WelcomeWindow(QWidget):
         event.accept()
 
 
-    def get_config_path(self):
-        if os.path.exists(CONFIG_FILE):
-            with open(CONFIG_FILE, 'r') as file:
-                return file.read().strip()
-        else:
-            return self.prompt_for_config_path()
+    # def get_config_path(self):
+    #     if os.path.exists(CONFIG_FILE):
+    #         with open(CONFIG_FILE, 'r') as file:
+    #             return file.read().strip()
+    #     else:
+    #         return self.prompt_for_config_path()
 
-    def prompt_for_config_path(self):
-        options = QFileDialog.Options()
-        options |= QFileDialog.ShowDirsOnly
-        directory = QFileDialog.getExistingDirectory(self, "Select Configuration Directory", options=options)
-        if directory:
-            with open(CONFIG_FILE, 'w') as file:
-                file.write(directory)
-            return directory
-        else:
-            QMessageBox.critical(self, "Error", "No directory selected. The application will exit.")
-            sys.exit(1)
+    # def prompt_for_config_path(self):
+    #     options = QFileDialog.Options()
+    #     options |= QFileDialog.ShowDirsOnly
+    #     directory = QFileDialog.getExistingDirectory(self, "Select Configuration Directory", options=options)
+    #     if directory:
+    #         with open(CONFIG_FILE, 'w') as file:
+    #             file.write(directory)
+    #         return directory
+    #     else:
+    #         QMessageBox.critical(self, "Error", "No directory selected. The application will exit.")
+    #         sys.exit(1)
 
-    def load_credentials(self):
-            credentials_file = os.path.join(self.config_path, 'credentials.yml')
-            if os.path.exists(credentials_file):
-                with open(credentials_file, 'r') as file:
-                    credentials = yaml.safe_load(file)
-                # Use credentials as needed
-            else:
-                QMessageBox.warning(self, "Missing Credentials", f"Please create a credentials.yml file in the {self.config_path} directory.")
+    # def load_credentials(self):
+    #         credentials_file = os.path.join(self.config_path, 'credentials.yml')
+    #         if os.path.exists(credentials_file):
+    #             with open(credentials_file, 'r') as file:
+    #                 credentials = yaml.safe_load(file)
+    #             # Use credentials as needed
+    #         else:
+    #             QMessageBox.warning(self, "Missing Credentials", f"Please create a credentials.yml file in the {self.config_path} directory.")
 
 
 def check_for_updates():
