@@ -1,4 +1,4 @@
-from PyQt5.QtWidgets import QApplication, QLabel, QWidget, QVBoxLayout, QPushButton
+from PyQt5.QtWidgets import QApplication, QLabel, QWidget, QVBoxLayout, QPushButton, QFileDialog, QMessageBox
 from PyQt5.QtGui import QFont
 from PyQt5.QtCore import Qt
 import sys
@@ -8,13 +8,18 @@ import os
 from AERIES.AERIES_API import *
 from AERIES.classListWindow import *
 from AESOP.AESOP_API import *
-# from AESOP.Update3 import *
+import Update3
 import yaml
+
+CONFIG_FILE = 'config_path.txt'
+
 
 class WelcomeWindow(QWidget):
     def __init__(self):
         super().__init__()
         self.initUI()
+        self.config_path = self.get_config_path()
+        # self.load_credentials()
         
 
     def initUI(self):
@@ -53,20 +58,17 @@ class WelcomeWindow(QWidget):
         self.show()
 
 
-
-
-
-    def handle_update_checked(self, update_info):
-        if 'error' in update_info:
-            self.update_label.setText(f"Update check failed: {update_info['error']}")
-        else:
-            latest_version = update_info['latest_version']
-            if self.update_window.current_version != latest_version:
-                self.update_label.setText(f"New version {latest_version} available. Updating...")
-                # Call the download and install method
-                self.update_window.download_and_install_update(update_info['latest_release'])
-            else:
-                self.update_label.setText(f"SOC Hub is up to date! {latest_version}")
+    # def handle_update_checked(self, update_info):
+    #     if 'error' in update_info:
+    #         self.update_label.setText(f"Update check failed: {update_info['error']}")
+    #     else:
+    #         latest_version = update_info['latest_version']
+    #         if self.update_window.current_version != latest_version:
+    #             self.update_label.setText(f"New version {latest_version} available. Updating...")
+    #             # Call the download and install method
+    #             self.update_window.download_and_install_update(update_info['latest_release'])
+    #         else:
+    #             self.update_label.setText(f"SOC Hub is up to date! {latest_version}")
 
     def openClassListWindow(self):
         self.aeriesAPI = AeriesAPI()
@@ -82,17 +84,45 @@ class WelcomeWindow(QWidget):
             self.update_window.close()
         event.accept()
 
+
+    def get_config_path(self):
+        if os.path.exists(CONFIG_FILE):
+            with open(CONFIG_FILE, 'r') as file:
+                return file.read().strip()
+        else:
+            return self.prompt_for_config_path()
+
+    def prompt_for_config_path(self):
+        options = QFileDialog.Options()
+        options |= QFileDialog.ShowDirsOnly
+        directory = QFileDialog.getExistingDirectory(self, "Select Configuration Directory", options=options)
+        if directory:
+            with open(CONFIG_FILE, 'w') as file:
+                file.write(directory)
+            return directory
+        else:
+            QMessageBox.critical(self, "Error", "No directory selected. The application will exit.")
+            sys.exit(1)
+
+    def load_credentials(self):
+            credentials_file = os.path.join(self.config_path, 'credentials.yml')
+            if os.path.exists(credentials_file):
+                with open(credentials_file, 'r') as file:
+                    credentials = yaml.safe_load(file)
+                # Use credentials as needed
+            else:
+                QMessageBox.warning(self, "Missing Credentials", f"Please create a credentials.yml file in the {self.config_path} directory.")
+
+
 def check_for_updates():
-    # Path to Update3.py
-    update_script_path = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'Update3.py')
-    
-    # Call Update3.py
-    subprocess.run(['python', update_script_path], check=True)
+    Update3.main()
+
+
 
 
 
 def main():
-    check_for_updates()
+    check_for_updates() #disable when test, enable when uploading
     app = QApplication(sys.argv)
     window = WelcomeWindow()
     window.show()

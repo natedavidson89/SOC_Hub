@@ -19,6 +19,9 @@
    'c:\\Users\\Nated\\VSC '
    'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\__init__.py',
    'PYMODULE'),
+  ('Update3',
+   'C:\\Users\\Nated\\VSC Projects\\SOC_Hub\\Update3.py',
+   'PYMODULE'),
   ('__future__',
    'C:\\Users\\Nated\\AppData\\Local\\Programs\\Python\\Python310\\lib\\__future__.py',
    'PYMODULE'),

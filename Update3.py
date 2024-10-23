@@ -39,17 +39,25 @@ def download_update():
         return None
 
 def replace_old_exe(new_exe_path):
-    current_exe_path = os.path.join(INSTALLATION_PATH, 'main.exe')
+    old_exe_path = os.path.join(INSTALLATION_PATH, 'main.exe')
     backup_exe_path = os.path.join(INSTALLATION_PATH, 'main_backup.exe')
+    
+    # Backup the old executable
+    if os.path.exists(old_exe_path):
+        shutil.move(old_exe_path, backup_exe_path)
+    
+    # Replace with the new executable
+    shutil.move(new_exe_path, old_exe_path)
+    print(f"Replaced old executable with the new one.")
 
-    # Create a backup of the current exe
-    if os.path.exists(current_exe_path):
-        shutil.move(current_exe_path, backup_exe_path)
-        print(f"Backup of old version created at {backup_exe_path}")
-
-    # Replace the old exe with the new one
-    shutil.move(new_exe_path, current_exe_path)
-    print(f"Updated {current_exe_path} with the new version.")
+def update_version_file(new_version, version_file='version.txt'):
+    """Update the version.txt file with the new version."""
+    try:
+        with open(os.path.join(INSTALLATION_PATH, version_file), 'w') as file:
+            file.write(new_version)
+        print(f"Version updated to {new_version}.")
+    except Exception as e:
+        print(f"An error occurred while updating {version_file}: {e}")
 
 def main():
     local_version = get_local_version()
@@ -60,6 +68,7 @@ def main():
         new_exe = download_update()
         if new_exe:
             replace_old_exe(new_exe)
+            update_version_file(latest_version)  # Update version.txt with the new version
 
             # Optionally restart the application
             os.startfile(os.path.join(INSTALLATION_PATH, 'main.exe'))
