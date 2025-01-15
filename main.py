@@ -7,7 +7,8 @@ import os
 # from updater import UpdateWindow  # Import the UpdateWindow class
 from AERIES.AERIES_API import *
 from AERIES.classListWindow import *
-from AESOP.AESOP_API import *
+# from AESOP.AESOP_API import *
+from AERIES.aeriesWindow import *
 import Update3
 import yaml
 
@@ -18,7 +19,8 @@ class WelcomeWindow(QWidget):
     def __init__(self):
         super().__init__()
         self.initUI()
-        self.config_path = self.get_config_path()
+        self.aeriesAPI = AeriesAPIz()
+        # self.config_path = self.get_config_path()
         # self.load_credentials()
         
 
@@ -34,6 +36,7 @@ class WelcomeWindow(QWidget):
         self.classList_button = QPushButton('Classlists', self)
         self.classList_button.clicked.connect(self.openClassListWindow)
         self.aeriesButton = QPushButton('Aeries', self)
+        self.aeriesButton.clicked.connect(self.openAeriesWindow)
         self.aesopButton = QPushButton('AESOP', self)
         self.aesopButton.clicked.connect(self.openAesopWindow)
         self.workOrderButton = QPushButton('Work Orders', self)
@@ -71,13 +74,17 @@ class WelcomeWindow(QWidget):
     #             self.update_label.setText(f"SOC Hub is up to date! {latest_version}")
 
     def openClassListWindow(self):
-        self.aeriesAPI = AeriesAPI()
         self.classListWindow = ClasslistsWindow(api=self.aeriesAPI)
         self.classListWindow.show()
+
+    def openAeriesWindow(self):
+        print("Opening AERIES window")
+        self.aeriesWindow = AeriesWindow(api=self.aeriesAPI)
+        self.aeriesWindow.show()
     
     def openAesopWindow(self):
         print("Opening AESOP window")
-        self.aesopAPI = AESOP_API()
+        # self.aesopAPI = AESOP_API()
 
     def closeEvent(self, event):
         if hasattr(self, 'update_window'):
