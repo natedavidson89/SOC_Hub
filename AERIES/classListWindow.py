@@ -2,7 +2,7 @@ import sys
 from PyQt5.QtWidgets import QApplication, QMainWindow, QLabel, QPushButton, QWidget, QVBoxLayout, QHBoxLayout, QFrame, QScrollArea, QTableWidget, QTableWidgetItem, QCheckBox, QGridLayout
 from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QFont
-from AERIES_API import *
+from AERIES.AERIES_API import AeriesAPIz
 
 class ClasslistsWindow(QMainWindow):
     """
