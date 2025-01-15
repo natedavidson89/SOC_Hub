@@ -33,7 +33,7 @@
    'Projects\\SOC_Hub\\build\\main\\localpycs\\pyimod04_pywin32.pyc',
    'PYMODULE'),
   ('pyiboot01_bootstrap',
-   'c:\\Users\\Nated\\VSC '
+   'C:\\Users\\Nated\\VSC '
    'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyInstaller\\loader\\pyiboot01_bootstrap.py',
    'PYSOURCE'),
   ('pyi_rth_inspect',
@@ -69,96 +69,100 @@
    'Projects\\SOC_Hub\\.venv\\Lib\\site-packages\\PyInstaller\\hooks\\rthooks\\pyi_rth_pyqt5.py',
    'PYSOURCE'),
   ('main', 'C:\\Users\\Nated\\VSC Projects\\SOC_Hub\\main.py', 'PYSOURCE'),
+  ('selenium\\webdriver\\common\\windows\\selenium-manager.exe',
+   'C:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\selenium\\webdriver\\common\\windows\\selenium-manager.exe',
+   'BINARY'),
   ('python310.dll',
    'C:\\Users\\Nated\\AppData\\Local\\Programs\\Python\\Python310\\python310.dll',
    'BINARY'),
   ('pywin32_system32\\pywintypes310.dll',
-   'c:\\Users\\Nated\\VSC '
+   'C:\\Users\\Nated\\VSC '
    'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\pywin32_system32\\pywintypes310.dll',
    'BINARY'),
   ('pywin32_system32\\pythoncom310.dll',
-   'c:\\Users\\Nated\\VSC '
+   'C:\\Users\\Nated\\VSC '
    'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\pywin32_system32\\pythoncom310.dll',
-   'BINARY'),
-  ('PyQt5\\Qt5\\bin\\libGLESv2.dll',
-   'C:\\Users\\Nated\\VSC '
-   'Projects\\SOC_Hub\\.venv\\Lib\\site-packages\\PyQt5\\Qt5\\bin\\libGLESv2.dll',
-   'BINARY'),
-  ('PyQt5\\Qt5\\bin\\d3dcompiler_47.dll',
-   'C:\\Users\\Nated\\VSC '
-   'Projects\\SOC_Hub\\.venv\\Lib\\site-packages\\PyQt5\\Qt5\\bin\\d3dcompiler_47.dll',
-   'BINARY'),
-  ('PyQt5\\Qt5\\bin\\libEGL.dll',
-   'C:\\Users\\Nated\\VSC '
-   'Projects\\SOC_Hub\\.venv\\Lib\\site-packages\\PyQt5\\Qt5\\bin\\libEGL.dll',
    'BINARY'),
   ('PyQt5\\Qt5\\bin\\opengl32sw.dll',
    'C:\\Users\\Nated\\VSC '
    'Projects\\SOC_Hub\\.venv\\Lib\\site-packages\\PyQt5\\Qt5\\bin\\opengl32sw.dll',
    'BINARY'),
-  ('PyQt5\\Qt5\\plugins\\imageformats\\qwebp.dll',
+  ('PyQt5\\Qt5\\bin\\libGLESv2.dll',
    'C:\\Users\\Nated\\VSC '
-   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\plugins\\imageformats\\qwebp.dll',
+   'Projects\\SOC_Hub\\.venv\\Lib\\site-packages\\PyQt5\\Qt5\\bin\\libGLESv2.dll',
    'BINARY'),
-  ('PyQt5\\Qt5\\plugins\\platforms\\qoffscreen.dll',
+  ('PyQt5\\Qt5\\bin\\libEGL.dll',
    'C:\\Users\\Nated\\VSC '
-   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\plugins\\platforms\\qoffscreen.dll',
+   'Projects\\SOC_Hub\\.venv\\Lib\\site-packages\\PyQt5\\Qt5\\bin\\libEGL.dll',
    'BINARY'),
-  ('PyQt5\\Qt5\\plugins\\iconengines\\qsvgicon.dll',
+  ('PyQt5\\Qt5\\bin\\d3dcompiler_47.dll',
    'C:\\Users\\Nated\\VSC '
-   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\plugins\\iconengines\\qsvgicon.dll',
-   'BINARY'),
-  ('PyQt5\\Qt5\\plugins\\imageformats\\qsvg.dll',
-   'C:\\Users\\Nated\\VSC '
-   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\plugins\\imageformats\\qsvg.dll',
-   'BINARY'),
-  ('PyQt5\\Qt5\\plugins\\imageformats\\qjpeg.dll',
-   'C:\\Users\\Nated\\VSC '
-   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\plugins\\imageformats\\qjpeg.dll',
-   'BINARY'),
-  ('PyQt5\\Qt5\\plugins\\imageformats\\qtga.dll',
-   'C:\\Users\\Nated\\VSC '
-   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\plugins\\imageformats\\qtga.dll',
-   'BINARY'),
-  ('PyQt5\\Qt5\\plugins\\imageformats\\qico.dll',
-   'C:\\Users\\Nated\\VSC '
-   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\plugins\\imageformats\\qico.dll',
-   'BINARY'),
-  ('PyQt5\\Qt5\\plugins\\imageformats\\qgif.dll',
-   'C:\\Users\\Nated\\VSC '
-   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\plugins\\imageformats\\qgif.dll',
-   'BINARY'),
-  ('PyQt5\\Qt5\\plugins\\imageformats\\qicns.dll',
-   'C:\\Users\\Nated\\VSC '
-   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\plugins\\imageformats\\qicns.dll',
+   'Projects\\SOC_Hub\\.venv\\Lib\\site-packages\\PyQt5\\Qt5\\bin\\d3dcompiler_47.dll',
    'BINARY'),
   ('PyQt5\\Qt5\\plugins\\platforms\\qwebgl.dll',
    'C:\\Users\\Nated\\VSC '
    'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\plugins\\platforms\\qwebgl.dll',
    'BINARY'),
-  ('PyQt5\\Qt5\\plugins\\platforms\\qwindows.dll',
+  ('PyQt5\\Qt5\\plugins\\imageformats\\qgif.dll',
    'C:\\Users\\Nated\\VSC '
-   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\plugins\\platforms\\qwindows.dll',
-   'BINARY'),
-  ('PyQt5\\Qt5\\plugins\\platformthemes\\qxdgdesktopportal.dll',
-   'C:\\Users\\Nated\\VSC '
-   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\plugins\\platformthemes\\qxdgdesktopportal.dll',
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\plugins\\imageformats\\qgif.dll',
    'BINARY'),
   ('PyQt5\\Qt5\\plugins\\imageformats\\qwbmp.dll',
    'C:\\Users\\Nated\\VSC '
    'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\plugins\\imageformats\\qwbmp.dll',
    'BINARY'),
-  ('PyQt5\\Qt5\\plugins\\platforms\\qminimal.dll',
+  ('PyQt5\\Qt5\\plugins\\iconengines\\qsvgicon.dll',
    'C:\\Users\\Nated\\VSC '
-   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\plugins\\platforms\\qminimal.dll',
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\plugins\\iconengines\\qsvgicon.dll',
+   'BINARY'),
+  ('PyQt5\\Qt5\\plugins\\platforms\\qoffscreen.dll',
+   'C:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\plugins\\platforms\\qoffscreen.dll',
    'BINARY'),
   ('PyQt5\\Qt5\\plugins\\generic\\qtuiotouchplugin.dll',
    'C:\\Users\\Nated\\VSC '
    'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\plugins\\generic\\qtuiotouchplugin.dll',
    'BINARY'),
+  ('PyQt5\\Qt5\\plugins\\imageformats\\qtga.dll',
+   'C:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\plugins\\imageformats\\qtga.dll',
+   'BINARY'),
+  ('PyQt5\\Qt5\\plugins\\platforms\\qwindows.dll',
+   'C:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\plugins\\platforms\\qwindows.dll',
+   'BINARY'),
+  ('PyQt5\\Qt5\\plugins\\imageformats\\qjpeg.dll',
+   'C:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\plugins\\imageformats\\qjpeg.dll',
+   'BINARY'),
+  ('PyQt5\\Qt5\\plugins\\imageformats\\qsvg.dll',
+   'C:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\plugins\\imageformats\\qsvg.dll',
+   'BINARY'),
+  ('PyQt5\\Qt5\\plugins\\platformthemes\\qxdgdesktopportal.dll',
+   'C:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\plugins\\platformthemes\\qxdgdesktopportal.dll',
+   'BINARY'),
+  ('PyQt5\\Qt5\\plugins\\imageformats\\qicns.dll',
+   'C:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\plugins\\imageformats\\qicns.dll',
+   'BINARY'),
+  ('PyQt5\\Qt5\\plugins\\platforms\\qminimal.dll',
+   'C:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\plugins\\platforms\\qminimal.dll',
+   'BINARY'),
   ('PyQt5\\Qt5\\plugins\\imageformats\\qtiff.dll',
    'C:\\Users\\Nated\\VSC '
    'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\plugins\\imageformats\\qtiff.dll',
+   'BINARY'),
+  ('PyQt5\\Qt5\\plugins\\imageformats\\qwebp.dll',
+   'C:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\plugins\\imageformats\\qwebp.dll',
+   'BINARY'),
+  ('PyQt5\\Qt5\\plugins\\imageformats\\qico.dll',
+   'C:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\plugins\\imageformats\\qico.dll',
    'BINARY'),
   ('PyQt5\\Qt5\\plugins\\styles\\qwindowsvistastyle.dll',
    'C:\\Users\\Nated\\VSC '
@@ -195,23 +199,23 @@
    'C:\\Users\\Nated\\AppData\\Local\\Programs\\Python\\Python310\\DLLs\\_queue.pyd',
    'EXTENSION'),
   ('win32\\win32api.pyd',
-   'c:\\Users\\Nated\\VSC '
+   'C:\\Users\\Nated\\VSC '
    'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\win32\\win32api.pyd',
    'EXTENSION'),
   ('win32com\\shell\\shell.pyd',
-   'c:\\Users\\Nated\\VSC '
+   'C:\\Users\\Nated\\VSC '
    'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\win32comext\\shell\\shell.pyd',
    'EXTENSION'),
   ('win32\\win32trace.pyd',
-   'c:\\Users\\Nated\\VSC '
+   'C:\\Users\\Nated\\VSC '
    'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\win32\\win32trace.pyd',
    'EXTENSION'),
   ('Pythonwin\\win32ui.pyd',
-   'c:\\Users\\Nated\\VSC '
+   'C:\\Users\\Nated\\VSC '
    'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\Pythonwin\\win32ui.pyd',
    'EXTENSION'),
   ('win32\\_win32sysloader.pyd',
-   'c:\\Users\\Nated\\VSC '
+   'C:\\Users\\Nated\\VSC '
    'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\win32\\_win32sysloader.pyd',
    'EXTENSION'),
   ('pyexpat.pyd',
@@ -223,42 +227,73 @@
   ('_msi.pyd',
    'C:\\Users\\Nated\\AppData\\Local\\Programs\\Python\\Python310\\DLLs\\_msi.pyd',
    'EXTENSION'),
-  ('yaml\\_yaml.cp310-win_amd64.pyd',
-   'c:\\Users\\Nated\\VSC '
-   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\yaml\\_yaml.cp310-win_amd64.pyd',
-   'EXTENSION'),
-  ('charset_normalizer\\md__mypyc.cp310-win_amd64.pyd',
-   'c:\\Users\\Nated\\VSC '
-   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\charset_normalizer\\md__mypyc.cp310-win_amd64.pyd',
-   'EXTENSION'),
-  ('charset_normalizer\\md.cp310-win_amd64.pyd',
-   'c:\\Users\\Nated\\VSC '
-   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\charset_normalizer\\md.cp310-win_amd64.pyd',
-   'EXTENSION'),
-  ('_cffi_backend.cp310-win_amd64.pyd',
-   'c:\\Users\\Nated\\VSC '
-   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\_cffi_backend.cp310-win_amd64.pyd',
-   'EXTENSION'),
   ('_overlapped.pyd',
    'C:\\Users\\Nated\\AppData\\Local\\Programs\\Python\\Python310\\DLLs\\_overlapped.pyd',
    'EXTENSION'),
   ('_asyncio.pyd',
    'C:\\Users\\Nated\\AppData\\Local\\Programs\\Python\\Python310\\DLLs\\_asyncio.pyd',
    'EXTENSION'),
+  ('yaml\\_yaml.cp310-win_amd64.pyd',
+   'C:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\yaml\\_yaml.cp310-win_amd64.pyd',
+   'EXTENSION'),
+  ('simplejson\\_speedups.cp310-win_amd64.pyd',
+   'C:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\simplejson\\_speedups.cp310-win_amd64.pyd',
+   'EXTENSION'),
+  ('charset_normalizer\\md__mypyc.cp310-win_amd64.pyd',
+   'C:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\charset_normalizer\\md__mypyc.cp310-win_amd64.pyd',
+   'EXTENSION'),
+  ('charset_normalizer\\md.cp310-win_amd64.pyd',
+   'C:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\charset_normalizer\\md.cp310-win_amd64.pyd',
+   'EXTENSION'),
+  ('_uuid.pyd',
+   'C:\\Users\\Nated\\AppData\\Local\\Programs\\Python\\Python310\\DLLs\\_uuid.pyd',
+   'EXTENSION'),
+  ('lxml\\etree.cp310-win_amd64.pyd',
+   'C:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\lxml\\etree.cp310-win_amd64.pyd',
+   'EXTENSION'),
+  ('lxml\\_elementpath.cp310-win_amd64.pyd',
+   'C:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\lxml\\_elementpath.cp310-win_amd64.pyd',
+   'EXTENSION'),
+  ('lxml\\sax.cp310-win_amd64.pyd',
+   'C:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\lxml\\sax.cp310-win_amd64.pyd',
+   'EXTENSION'),
+  ('lxml\\objectify.cp310-win_amd64.pyd',
+   'C:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\lxml\\objectify.cp310-win_amd64.pyd',
+   'EXTENSION'),
+  ('lxml\\html\\diff.cp310-win_amd64.pyd',
+   'C:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\lxml\\html\\diff.cp310-win_amd64.pyd',
+   'EXTENSION'),
+  ('lxml\\builder.cp310-win_amd64.pyd',
+   'C:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\lxml\\builder.cp310-win_amd64.pyd',
+   'EXTENSION'),
+  ('_cffi_backend.cp310-win_amd64.pyd',
+   'C:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\_cffi_backend.cp310-win_amd64.pyd',
+   'EXTENSION'),
   ('PyQt5\\QtCore.pyd',
-   'c:\\Users\\Nated\\VSC '
+   'C:\\Users\\Nated\\VSC '
    'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\QtCore.pyd',
    'EXTENSION'),
   ('PyQt5\\sip.cp310-win_amd64.pyd',
-   'c:\\Users\\Nated\\VSC '
+   'C:\\Users\\Nated\\VSC '
    'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\sip.cp310-win_amd64.pyd',
    'EXTENSION'),
   ('PyQt5\\QtGui.pyd',
-   'c:\\Users\\Nated\\VSC '
+   'C:\\Users\\Nated\\VSC '
    'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\QtGui.pyd',
    'EXTENSION'),
   ('PyQt5\\QtWidgets.pyd',
-   'c:\\Users\\Nated\\VSC '
+   'C:\\Users\\Nated\\VSC '
    'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\QtWidgets.pyd',
    'EXTENSION'),
   ('VCRUNTIME140.dll',
@@ -266,6 +301,10 @@
    'BINARY'),
   ('VCRUNTIME140_1.dll',
    'C:\\Users\\Nated\\AppData\\Local\\Programs\\Python\\Python310\\VCRUNTIME140_1.dll',
+   'BINARY'),
+  ('PyQt5\\Qt5\\bin\\MSVCP140.dll',
+   'C:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\Lib\\site-packages\\PyQt5\\Qt5\\bin\\MSVCP140.dll',
    'BINARY'),
   ('PyQt5\\Qt5\\bin\\VCRUNTIME140_1.dll',
    'C:\\Users\\Nated\\VSC '
@@ -275,40 +314,36 @@
    'C:\\Users\\Nated\\VSC '
    'Projects\\SOC_Hub\\.venv\\Lib\\site-packages\\PyQt5\\Qt5\\bin\\VCRUNTIME140.dll',
    'BINARY'),
-  ('PyQt5\\Qt5\\bin\\MSVCP140.dll',
+  ('PyQt5\\Qt5\\bin\\Qt5Network.dll',
    'C:\\Users\\Nated\\VSC '
-   'Projects\\SOC_Hub\\.venv\\Lib\\site-packages\\PyQt5\\Qt5\\bin\\MSVCP140.dll',
-   'BINARY'),
-  ('PyQt5\\Qt5\\bin\\Qt5Gui.dll',
-   'c:\\Users\\Nated\\VSC '
-   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\bin\\Qt5Gui.dll',
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\bin\\Qt5Network.dll',
    'BINARY'),
   ('PyQt5\\Qt5\\bin\\Qt5Core.dll',
-   'c:\\Users\\Nated\\VSC '
+   'C:\\Users\\Nated\\VSC '
    'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\bin\\Qt5Core.dll',
    'BINARY'),
-  ('PyQt5\\Qt5\\bin\\Qt5Svg.dll',
-   'c:\\Users\\Nated\\VSC '
-   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\bin\\Qt5Svg.dll',
+  ('PyQt5\\Qt5\\bin\\Qt5Gui.dll',
+   'C:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\bin\\Qt5Gui.dll',
    'BINARY'),
   ('PyQt5\\Qt5\\bin\\Qt5Quick.dll',
-   'c:\\Users\\Nated\\VSC '
+   'C:\\Users\\Nated\\VSC '
    'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\bin\\Qt5Quick.dll',
    'BINARY'),
   ('PyQt5\\Qt5\\bin\\Qt5WebSockets.dll',
-   'c:\\Users\\Nated\\VSC '
+   'C:\\Users\\Nated\\VSC '
    'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\bin\\Qt5WebSockets.dll',
    'BINARY'),
-  ('PyQt5\\Qt5\\bin\\Qt5Network.dll',
-   'c:\\Users\\Nated\\VSC '
-   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\bin\\Qt5Network.dll',
+  ('PyQt5\\Qt5\\bin\\Qt5Svg.dll',
+   'C:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\bin\\Qt5Svg.dll',
    'BINARY'),
   ('PyQt5\\Qt5\\bin\\Qt5DBus.dll',
-   'c:\\Users\\Nated\\VSC '
+   'C:\\Users\\Nated\\VSC '
    'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\bin\\Qt5DBus.dll',
    'BINARY'),
   ('PyQt5\\Qt5\\bin\\Qt5Widgets.dll',
-   'c:\\Users\\Nated\\VSC '
+   'C:\\Users\\Nated\\VSC '
    'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\bin\\Qt5Widgets.dll',
    'BINARY'),
   ('libcrypto-1_1.dll',
@@ -321,22 +356,22 @@
    'C:\\Users\\Nated\\AppData\\Local\\Programs\\Python\\Python310\\DLLs\\libssl-1_1.dll',
    'BINARY'),
   ('Pythonwin\\mfc140u.dll',
-   'c:\\Users\\Nated\\VSC '
+   'C:\\Users\\Nated\\VSC '
    'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\Pythonwin\\mfc140u.dll',
    'BINARY'),
   ('python3.dll',
    'C:\\Users\\Nated\\AppData\\Local\\Programs\\Python\\Python310\\python3.dll',
    'BINARY'),
   ('PyQt5\\Qt5\\bin\\MSVCP140_1.dll',
-   'c:\\Users\\Nated\\VSC '
+   'C:\\Users\\Nated\\VSC '
    'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\bin\\MSVCP140_1.dll',
    'BINARY'),
   ('PyQt5\\Qt5\\bin\\Qt5QmlModels.dll',
-   'c:\\Users\\Nated\\VSC '
+   'C:\\Users\\Nated\\VSC '
    'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\bin\\Qt5QmlModels.dll',
    'BINARY'),
   ('PyQt5\\Qt5\\bin\\Qt5Qml.dll',
-   'c:\\Users\\Nated\\VSC '
+   'C:\\Users\\Nated\\VSC '
    'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\bin\\Qt5Qml.dll',
    'BINARY'),
   ('credentials.yml',
@@ -346,168 +381,108 @@
    'C:\\Users\\Nated\\VSC Projects\\SOC_Hub\\build\\main\\base_library.zip',
    'DATA'),
   ('certifi\\py.typed',
-   'c:\\Users\\Nated\\VSC '
+   'C:\\Users\\Nated\\VSC '
    'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\certifi\\py.typed',
    'DATA'),
   ('certifi\\cacert.pem',
-   'c:\\Users\\Nated\\VSC '
+   'C:\\Users\\Nated\\VSC '
    'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\certifi\\cacert.pem',
+   'DATA'),
+  ('selenium\\webdriver\\common\\devtools\\v127\\py.typed',
+   'C:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\selenium\\webdriver\\common\\devtools\\v127\\py.typed',
+   'DATA'),
+  ('selenium\\webdriver\\common\\devtools\\v128\\py.typed',
+   'C:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\selenium\\webdriver\\common\\devtools\\v128\\py.typed',
+   'DATA'),
+  ('selenium\\webdriver\\common\\devtools\\v85\\py.typed',
+   'C:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\selenium\\webdriver\\common\\devtools\\v85\\py.typed',
+   'DATA'),
+  ('selenium\\webdriver\\common\\devtools\\v129\\py.typed',
+   'C:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\selenium\\webdriver\\common\\devtools\\v129\\py.typed',
+   'DATA'),
+  ('selenium\\webdriver\\common\\linux\\selenium-manager',
+   'C:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\selenium\\webdriver\\common\\linux\\selenium-manager',
+   'DATA'),
+  ('selenium\\webdriver\\common\\macos\\selenium-manager',
+   'C:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\selenium\\webdriver\\common\\macos\\selenium-manager',
+   'DATA'),
+  ('selenium\\webdriver\\remote\\isDisplayed.js',
+   'C:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\selenium\\webdriver\\remote\\isDisplayed.js',
+   'DATA'),
+  ('selenium\\webdriver\\remote\\getAttribute.js',
+   'C:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\selenium\\webdriver\\remote\\getAttribute.js',
+   'DATA'),
+  ('selenium\\webdriver\\firefox\\webdriver_prefs.json',
+   'C:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\selenium\\webdriver\\firefox\\webdriver_prefs.json',
+   'DATA'),
+  ('selenium\\webdriver\\common\\mutation-listener.js',
+   'C:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\selenium\\webdriver\\common\\mutation-listener.js',
+   'DATA'),
+  ('selenium\\webdriver\\remote\\findElements.js',
+   'C:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\selenium\\webdriver\\remote\\findElements.js',
+   'DATA'),
+  ('selenium\\py.typed',
+   'C:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\selenium\\py.typed',
+   'DATA'),
+  ('lxml\\isoschematron\\resources\\xsl\\iso-schematron-xslt1\\iso_abstract_expand.xsl',
+   'C:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\lxml\\isoschematron\\resources\\xsl\\iso-schematron-xslt1\\iso_abstract_expand.xsl',
+   'DATA'),
+  ('lxml\\isoschematron\\resources\\xsl\\RNG2Schtrn.xsl',
+   'C:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\lxml\\isoschematron\\resources\\xsl\\RNG2Schtrn.xsl',
+   'DATA'),
+  ('lxml\\isoschematron\\resources\\rng\\iso-schematron.rng',
+   'C:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\lxml\\isoschematron\\resources\\rng\\iso-schematron.rng',
+   'DATA'),
+  ('lxml\\isoschematron\\resources\\xsl\\iso-schematron-xslt1\\iso_svrl_for_xslt1.xsl',
+   'C:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\lxml\\isoschematron\\resources\\xsl\\iso-schematron-xslt1\\iso_svrl_for_xslt1.xsl',
+   'DATA'),
+  ('lxml\\isoschematron\\resources\\xsl\\XSD2Schtrn.xsl',
+   'C:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\lxml\\isoschematron\\resources\\xsl\\XSD2Schtrn.xsl',
+   'DATA'),
+  ('lxml\\isoschematron\\resources\\xsl\\iso-schematron-xslt1\\iso_dsdl_include.xsl',
+   'C:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\lxml\\isoschematron\\resources\\xsl\\iso-schematron-xslt1\\iso_dsdl_include.xsl',
+   'DATA'),
+  ('lxml\\isoschematron\\resources\\xsl\\iso-schematron-xslt1\\readme.txt',
+   'C:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\lxml\\isoschematron\\resources\\xsl\\iso-schematron-xslt1\\readme.txt',
+   'DATA'),
+  ('lxml\\isoschematron\\resources\\xsl\\iso-schematron-xslt1\\iso_schematron_skeleton_for_xslt1.xsl',
+   'C:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\lxml\\isoschematron\\resources\\xsl\\iso-schematron-xslt1\\iso_schematron_skeleton_for_xslt1.xsl',
+   'DATA'),
+  ('lxml\\isoschematron\\resources\\xsl\\iso-schematron-xslt1\\iso_schematron_message.xsl',
+   'C:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\lxml\\isoschematron\\resources\\xsl\\iso-schematron-xslt1\\iso_schematron_message.xsl',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qtbase_it.qm',
+   'C:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qtbase_it.qm',
    'DATA'),
   ('PyQt5\\Qt5\\translations\\qtbase_es.qm',
    'C:\\Users\\Nated\\VSC '
    'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qtbase_es.qm',
    'DATA'),
-  ('PyQt5\\Qt5\\translations\\qt_help_ko.qm',
+  ('PyQt5\\Qt5\\translations\\qt_help_cs.qm',
    'C:\\Users\\Nated\\VSC '
-   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_help_ko.qm',
-   'DATA'),
-  ('PyQt5\\Qt5\\translations\\qt_en.qm',
-   'C:\\Users\\Nated\\VSC '
-   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_en.qm',
-   'DATA'),
-  ('PyQt5\\Qt5\\translations\\qt_help_ar.qm',
-   'C:\\Users\\Nated\\VSC '
-   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_help_ar.qm',
-   'DATA'),
-  ('PyQt5\\Qt5\\translations\\qtbase_ca.qm',
-   'C:\\Users\\Nated\\VSC '
-   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qtbase_ca.qm',
-   'DATA'),
-  ('PyQt5\\Qt5\\translations\\qt_zh_CN.qm',
-   'C:\\Users\\Nated\\VSC '
-   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_zh_CN.qm',
-   'DATA'),
-  ('PyQt5\\Qt5\\translations\\qt_help_fr.qm',
-   'C:\\Users\\Nated\\VSC '
-   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_help_fr.qm',
-   'DATA'),
-  ('PyQt5\\Qt5\\translations\\qt_zh_TW.qm',
-   'C:\\Users\\Nated\\VSC '
-   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_zh_TW.qm',
-   'DATA'),
-  ('PyQt5\\Qt5\\translations\\qtbase_ar.qm',
-   'C:\\Users\\Nated\\VSC '
-   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qtbase_ar.qm',
-   'DATA'),
-  ('PyQt5\\Qt5\\translations\\qt_tr.qm',
-   'C:\\Users\\Nated\\VSC '
-   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_tr.qm',
-   'DATA'),
-  ('PyQt5\\Qt5\\translations\\qt_help_zh_TW.qm',
-   'C:\\Users\\Nated\\VSC '
-   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_help_zh_TW.qm',
-   'DATA'),
-  ('PyQt5\\Qt5\\translations\\qtbase_cs.qm',
-   'C:\\Users\\Nated\\VSC '
-   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qtbase_cs.qm',
-   'DATA'),
-  ('PyQt5\\Qt5\\translations\\qtbase_sk.qm',
-   'C:\\Users\\Nated\\VSC '
-   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qtbase_sk.qm',
-   'DATA'),
-  ('PyQt5\\Qt5\\translations\\qt_fa.qm',
-   'C:\\Users\\Nated\\VSC '
-   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_fa.qm',
-   'DATA'),
-  ('PyQt5\\Qt5\\translations\\qtbase_uk.qm',
-   'C:\\Users\\Nated\\VSC '
-   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qtbase_uk.qm',
-   'DATA'),
-  ('PyQt5\\Qt5\\translations\\qt_help_sl.qm',
-   'C:\\Users\\Nated\\VSC '
-   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_help_sl.qm',
-   'DATA'),
-  ('PyQt5\\Qt5\\translations\\qt_sk.qm',
-   'C:\\Users\\Nated\\VSC '
-   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_sk.qm',
-   'DATA'),
-  ('PyQt5\\Qt5\\translations\\qt_pt.qm',
-   'C:\\Users\\Nated\\VSC '
-   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_pt.qm',
-   'DATA'),
-  ('PyQt5\\Qt5\\translations\\qtbase_da.qm',
-   'C:\\Users\\Nated\\VSC '
-   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qtbase_da.qm',
-   'DATA'),
-  ('PyQt5\\Qt5\\translations\\qt_sv.qm',
-   'C:\\Users\\Nated\\VSC '
-   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_sv.qm',
-   'DATA'),
-  ('PyQt5\\Qt5\\translations\\qt_fi.qm',
-   'C:\\Users\\Nated\\VSC '
-   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_fi.qm',
-   'DATA'),
-  ('PyQt5\\Qt5\\translations\\qt_help_gl.qm',
-   'C:\\Users\\Nated\\VSC '
-   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_help_gl.qm',
-   'DATA'),
-  ('PyQt5\\Qt5\\translations\\qt_help_tr.qm',
-   'C:\\Users\\Nated\\VSC '
-   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_help_tr.qm',
-   'DATA'),
-  ('PyQt5\\Qt5\\translations\\qt_gl.qm',
-   'C:\\Users\\Nated\\VSC '
-   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_gl.qm',
-   'DATA'),
-  ('PyQt5\\Qt5\\translations\\qt_ar.qm',
-   'C:\\Users\\Nated\\VSC '
-   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_ar.qm',
-   'DATA'),
-  ('PyQt5\\Qt5\\translations\\qt_lv.qm',
-   'C:\\Users\\Nated\\VSC '
-   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_lv.qm',
-   'DATA'),
-  ('PyQt5\\Qt5\\translations\\qtbase_gd.qm',
-   'C:\\Users\\Nated\\VSC '
-   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qtbase_gd.qm',
-   'DATA'),
-  ('PyQt5\\Qt5\\translations\\qtbase_pl.qm',
-   'C:\\Users\\Nated\\VSC '
-   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qtbase_pl.qm',
-   'DATA'),
-  ('PyQt5\\Qt5\\translations\\qt_lt.qm',
-   'C:\\Users\\Nated\\VSC '
-   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_lt.qm',
-   'DATA'),
-  ('PyQt5\\Qt5\\translations\\qtbase_lv.qm',
-   'C:\\Users\\Nated\\VSC '
-   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qtbase_lv.qm',
-   'DATA'),
-  ('PyQt5\\Qt5\\translations\\qt_de.qm',
-   'C:\\Users\\Nated\\VSC '
-   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_de.qm',
-   'DATA'),
-  ('PyQt5\\Qt5\\translations\\qt_pl.qm',
-   'C:\\Users\\Nated\\VSC '
-   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_pl.qm',
-   'DATA'),
-  ('PyQt5\\Qt5\\translations\\qtbase_bg.qm',
-   'C:\\Users\\Nated\\VSC '
-   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qtbase_bg.qm',
-   'DATA'),
-  ('PyQt5\\Qt5\\translations\\qt_ko.qm',
-   'C:\\Users\\Nated\\VSC '
-   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_ko.qm',
-   'DATA'),
-  ('PyQt5\\Qt5\\translations\\qt_help_pl.qm',
-   'C:\\Users\\Nated\\VSC '
-   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_help_pl.qm',
-   'DATA'),
-  ('PyQt5\\Qt5\\translations\\qt_help_ru.qm',
-   'C:\\Users\\Nated\\VSC '
-   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_help_ru.qm',
-   'DATA'),
-  ('PyQt5\\Qt5\\translations\\qt_help_da.qm',
-   'C:\\Users\\Nated\\VSC '
-   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_help_da.qm',
-   'DATA'),
-  ('PyQt5\\Qt5\\translations\\qt_help_uk.qm',
-   'C:\\Users\\Nated\\VSC '
-   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_help_uk.qm',
-   'DATA'),
-  ('PyQt5\\Qt5\\translations\\qtbase_ja.qm',
-   'C:\\Users\\Nated\\VSC '
-   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qtbase_ja.qm',
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_help_cs.qm',
    'DATA'),
   ('PyQt5\\Qt5\\translations\\qt_help_zh_CN.qm',
    'C:\\Users\\Nated\\VSC '
@@ -517,193 +492,337 @@
    'C:\\Users\\Nated\\VSC '
    'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_help_ja.qm',
    'DATA'),
-  ('PyQt5\\Qt5\\translations\\qtbase_it.qm',
+  ('PyQt5\\Qt5\\translations\\qtbase_ko.qm',
    'C:\\Users\\Nated\\VSC '
-   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qtbase_it.qm',
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qtbase_ko.qm',
    'DATA'),
-  ('PyQt5\\Qt5\\translations\\qt_ru.qm',
+  ('PyQt5\\Qt5\\translations\\qt_tr.qm',
    'C:\\Users\\Nated\\VSC '
-   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_ru.qm',
-   'DATA'),
-  ('PyQt5\\Qt5\\translations\\qt_uk.qm',
-   'C:\\Users\\Nated\\VSC '
-   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_uk.qm',
-   'DATA'),
-  ('PyQt5\\Qt5\\translations\\qt_help_cs.qm',
-   'C:\\Users\\Nated\\VSC '
-   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_help_cs.qm',
-   'DATA'),
-  ('PyQt5\\Qt5\\translations\\qtbase_hu.qm',
-   'C:\\Users\\Nated\\VSC '
-   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qtbase_hu.qm',
-   'DATA'),
-  ('PyQt5\\Qt5\\translations\\qt_help_bg.qm',
-   'C:\\Users\\Nated\\VSC '
-   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_help_bg.qm',
-   'DATA'),
-  ('PyQt5\\Qt5\\translations\\qt_help_ca.qm',
-   'C:\\Users\\Nated\\VSC '
-   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_help_ca.qm',
-   'DATA'),
-  ('PyQt5\\Qt5\\translations\\qt_es.qm',
-   'C:\\Users\\Nated\\VSC '
-   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_es.qm',
-   'DATA'),
-  ('PyQt5\\Qt5\\translations\\qt_hu.qm',
-   'C:\\Users\\Nated\\VSC '
-   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_hu.qm',
-   'DATA'),
-  ('PyQt5\\Qt5\\translations\\qt_sl.qm',
-   'C:\\Users\\Nated\\VSC '
-   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_sl.qm',
-   'DATA'),
-  ('PyQt5\\Qt5\\translations\\qt_he.qm',
-   'C:\\Users\\Nated\\VSC '
-   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_he.qm',
-   'DATA'),
-  ('PyQt5\\Qt5\\translations\\qt_help_it.qm',
-   'C:\\Users\\Nated\\VSC '
-   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_help_it.qm',
-   'DATA'),
-  ('PyQt5\\Qt5\\translations\\qtbase_fi.qm',
-   'C:\\Users\\Nated\\VSC '
-   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qtbase_fi.qm',
-   'DATA'),
-  ('PyQt5\\Qt5\\translations\\qt_da.qm',
-   'C:\\Users\\Nated\\VSC '
-   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_da.qm',
-   'DATA'),
-  ('PyQt5\\Qt5\\translations\\qt_help_sk.qm',
-   'C:\\Users\\Nated\\VSC '
-   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_help_sk.qm',
-   'DATA'),
-  ('PyQt5\\Qt5\\translations\\qtbase_fr.qm',
-   'C:\\Users\\Nated\\VSC '
-   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qtbase_fr.qm',
-   'DATA'),
-  ('PyQt5\\Qt5\\translations\\qt_help_en.qm',
-   'C:\\Users\\Nated\\VSC '
-   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_help_en.qm',
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_tr.qm',
    'DATA'),
   ('PyQt5\\Qt5\\translations\\qt_help_de.qm',
    'C:\\Users\\Nated\\VSC '
    'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_help_de.qm',
    'DATA'),
-  ('PyQt5\\Qt5\\translations\\qtbase_de.qm',
-   'C:\\Users\\Nated\\VSC '
-   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qtbase_de.qm',
-   'DATA'),
-  ('PyQt5\\Qt5\\translations\\qtbase_ko.qm',
-   'C:\\Users\\Nated\\VSC '
-   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qtbase_ko.qm',
-   'DATA'),
   ('PyQt5\\Qt5\\translations\\qtbase_ru.qm',
    'C:\\Users\\Nated\\VSC '
    'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qtbase_ru.qm',
    'DATA'),
-  ('PyQt5\\Qt5\\translations\\qt_bg.qm',
+  ('PyQt5\\Qt5\\translations\\qtbase_sk.qm',
    'C:\\Users\\Nated\\VSC '
-   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_bg.qm',
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qtbase_sk.qm',
    'DATA'),
-  ('PyQt5\\Qt5\\translations\\qt_ca.qm',
+  ('PyQt5\\Qt5\\translations\\qtbase_ar.qm',
    'C:\\Users\\Nated\\VSC '
-   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_ca.qm',
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qtbase_ar.qm',
    'DATA'),
-  ('PyQt5\\Qt5\\translations\\qt_it.qm',
+  ('PyQt5\\Qt5\\translations\\qt_help_ko.qm',
    'C:\\Users\\Nated\\VSC '
-   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_it.qm',
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_help_ko.qm',
    'DATA'),
-  ('PyQt5\\Qt5\\translations\\qt_help_hu.qm',
+  ('PyQt5\\Qt5\\translations\\qtbase_cs.qm',
    'C:\\Users\\Nated\\VSC '
-   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_help_hu.qm',
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qtbase_cs.qm',
    'DATA'),
-  ('PyQt5\\Qt5\\translations\\qtbase_en.qm',
+  ('PyQt5\\Qt5\\translations\\qt_help_da.qm',
    'C:\\Users\\Nated\\VSC '
-   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qtbase_en.qm',
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_help_da.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qtbase_gd.qm',
+   'C:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qtbase_gd.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_he.qm',
+   'C:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_he.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_help_uk.qm',
+   'C:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_help_uk.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_fi.qm',
+   'C:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_fi.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qtbase_bg.qm',
+   'C:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qtbase_bg.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_sl.qm',
+   'C:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_sl.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qtbase_pl.qm',
+   'C:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qtbase_pl.qm',
    'DATA'),
   ('PyQt5\\Qt5\\translations\\qtbase_tr.qm',
    'C:\\Users\\Nated\\VSC '
    'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qtbase_tr.qm',
    'DATA'),
-  ('PyQt5\\Qt5\\translations\\qt_fr.qm',
+  ('PyQt5\\Qt5\\translations\\qt_zh_TW.qm',
    'C:\\Users\\Nated\\VSC '
-   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_fr.qm',
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_zh_TW.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qtbase_de.qm',
+   'C:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qtbase_de.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_help_zh_TW.qm',
+   'C:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_help_zh_TW.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qtbase_ca.qm',
+   'C:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qtbase_ca.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_zh_CN.qm',
+   'C:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_zh_CN.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_help_pl.qm',
+   'C:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_help_pl.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_uk.qm',
+   'C:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_uk.qm',
    'DATA'),
   ('PyQt5\\Qt5\\translations\\qt_gd.qm',
    'C:\\Users\\Nated\\VSC '
    'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_gd.qm',
    'DATA'),
-  ('PyQt5\\Qt5\\translations\\qt_ja.qm',
+  ('PyQt5\\Qt5\\translations\\qt_pt.qm',
    'C:\\Users\\Nated\\VSC '
-   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_ja.qm',
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_pt.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_help_ca.qm',
+   'C:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_help_ca.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_lv.qm',
+   'C:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_lv.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qtbase_fr.qm',
+   'C:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qtbase_fr.qm',
    'DATA'),
   ('PyQt5\\Qt5\\translations\\qtbase_zh_TW.qm',
    'C:\\Users\\Nated\\VSC '
    'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qtbase_zh_TW.qm',
    'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_sk.qm',
+   'C:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_sk.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_es.qm',
+   'C:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_es.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_ja.qm',
+   'C:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_ja.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_help_bg.qm',
+   'C:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_help_bg.qm',
+   'DATA'),
   ('PyQt5\\Qt5\\translations\\qt_help_es.qm',
    'C:\\Users\\Nated\\VSC '
    'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_help_es.qm',
    'DATA'),
-  ('PyQt5\\Qt5\\translations\\qtbase_he.qm',
+  ('PyQt5\\Qt5\\translations\\qt_en.qm',
    'C:\\Users\\Nated\\VSC '
-   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qtbase_he.qm',
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_en.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_help_hu.qm',
+   'C:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_help_hu.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_pl.qm',
+   'C:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_pl.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_ca.qm',
+   'C:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_ca.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_ko.qm',
+   'C:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_ko.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qtbase_en.qm',
+   'C:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qtbase_en.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_help_it.qm',
+   'C:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_help_it.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_help_gl.qm',
+   'C:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_help_gl.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_gl.qm',
+   'C:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_gl.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_help_sk.qm',
+   'C:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_help_sk.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qtbase_hu.qm',
+   'C:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qtbase_hu.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_help_fr.qm',
+   'C:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_help_fr.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_bg.qm',
+   'C:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_bg.qm',
    'DATA'),
   ('PyQt5\\Qt5\\translations\\qt_cs.qm',
    'C:\\Users\\Nated\\VSC '
    'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_cs.qm',
    'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_ar.qm',
+   'C:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_ar.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_sv.qm',
+   'C:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_sv.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_de.qm',
+   'C:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_de.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_help_en.qm',
+   'C:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_help_en.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_help_tr.qm',
+   'C:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_help_tr.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qtbase_fi.qm',
+   'C:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qtbase_fi.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qtbase_he.qm',
+   'C:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qtbase_he.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qtbase_uk.qm',
+   'C:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qtbase_uk.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_help_sl.qm',
+   'C:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_help_sl.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_da.qm',
+   'C:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_da.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_fa.qm',
+   'C:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_fa.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qtbase_ja.qm',
+   'C:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qtbase_ja.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_lt.qm',
+   'C:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_lt.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_help_ar.qm',
+   'C:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_help_ar.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_it.qm',
+   'C:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_it.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_fr.qm',
+   'C:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_fr.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_hu.qm',
+   'C:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_hu.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_ru.qm',
+   'C:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_ru.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qtbase_lv.qm',
+   'C:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qtbase_lv.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qt_help_ru.qm',
+   'C:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qt_help_ru.qm',
+   'DATA'),
+  ('PyQt5\\Qt5\\translations\\qtbase_da.qm',
+   'C:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\PyQt5\\Qt5\\translations\\qtbase_da.qm',
+   'DATA'),
   ('attrs-24.2.0.dist-info\\RECORD',
-   'c:\\Users\\Nated\\VSC '
+   'C:\\Users\\Nated\\VSC '
    'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\attrs-24.2.0.dist-info\\RECORD',
    'DATA'),
+  ('attrs-24.2.0.dist-info\\WHEEL',
+   'C:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\attrs-24.2.0.dist-info\\WHEEL',
+   'DATA'),
+  ('attrs-24.2.0.dist-info\\licenses\\LICENSE',
+   'C:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\attrs-24.2.0.dist-info\\licenses\\LICENSE',
+   'DATA'),
   ('attrs-24.2.0.dist-info\\INSTALLER',
-   'c:\\Users\\Nated\\VSC '
+   'C:\\Users\\Nated\\VSC '
    'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\attrs-24.2.0.dist-info\\INSTALLER',
    'DATA'),
   ('setuptools-63.2.0.dist-info\\entry_points.txt',
-   'c:\\Users\\Nated\\VSC '
+   'C:\\Users\\Nated\\VSC '
    'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\setuptools-63.2.0.dist-info\\entry_points.txt',
    'DATA'),
-  ('setuptools-63.2.0.dist-info\\RECORD',
-   'c:\\Users\\Nated\\VSC '
-   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\setuptools-63.2.0.dist-info\\RECORD',
-   'DATA'),
-  ('attrs-24.2.0.dist-info\\licenses\\LICENSE',
-   'c:\\Users\\Nated\\VSC '
-   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\attrs-24.2.0.dist-info\\licenses\\LICENSE',
-   'DATA'),
-  ('setuptools-63.2.0.dist-info\\WHEEL',
-   'c:\\Users\\Nated\\VSC '
-   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\setuptools-63.2.0.dist-info\\WHEEL',
-   'DATA'),
-  ('attrs-24.2.0.dist-info\\METADATA',
-   'c:\\Users\\Nated\\VSC '
-   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\attrs-24.2.0.dist-info\\METADATA',
-   'DATA'),
   ('setuptools-63.2.0.dist-info\\LICENSE',
-   'c:\\Users\\Nated\\VSC '
+   'C:\\Users\\Nated\\VSC '
    'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\setuptools-63.2.0.dist-info\\LICENSE',
    'DATA'),
-  ('setuptools-63.2.0.dist-info\\METADATA',
-   'c:\\Users\\Nated\\VSC '
-   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\setuptools-63.2.0.dist-info\\METADATA',
-   'DATA'),
   ('setuptools-63.2.0.dist-info\\INSTALLER',
-   'c:\\Users\\Nated\\VSC '
+   'C:\\Users\\Nated\\VSC '
    'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\setuptools-63.2.0.dist-info\\INSTALLER',
    'DATA'),
-  ('setuptools-63.2.0.dist-info\\top_level.txt',
-   'c:\\Users\\Nated\\VSC '
-   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\setuptools-63.2.0.dist-info\\top_level.txt',
+  ('setuptools-63.2.0.dist-info\\WHEEL',
+   'C:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\setuptools-63.2.0.dist-info\\WHEEL',
    'DATA'),
   ('setuptools-63.2.0.dist-info\\REQUESTED',
-   'c:\\Users\\Nated\\VSC '
+   'C:\\Users\\Nated\\VSC '
    'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\setuptools-63.2.0.dist-info\\REQUESTED',
    'DATA'),
-  ('attrs-24.2.0.dist-info\\WHEEL',
-   'c:\\Users\\Nated\\VSC '
-   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\attrs-24.2.0.dist-info\\WHEEL',
+  ('setuptools-63.2.0.dist-info\\top_level.txt',
+   'C:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\setuptools-63.2.0.dist-info\\top_level.txt',
+   'DATA'),
+  ('setuptools-63.2.0.dist-info\\METADATA',
+   'C:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\setuptools-63.2.0.dist-info\\METADATA',
+   'DATA'),
+  ('attrs-24.2.0.dist-info\\METADATA',
+   'C:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\attrs-24.2.0.dist-info\\METADATA',
+   'DATA'),
+  ('setuptools-63.2.0.dist-info\\RECORD',
+   'C:\\Users\\Nated\\VSC '
+   'Projects\\SOC_Hub\\.venv\\lib\\site-packages\\setuptools-63.2.0.dist-info\\RECORD',
    'DATA')],
  'python310.dll',
  False,
