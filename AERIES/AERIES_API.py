@@ -1,3 +1,7 @@
+import sys
+import os
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 import time
 from datetime import datetime
 import httpx
@@ -154,7 +158,7 @@ class AeriesAPIz:
             "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36"
         }
 
-        print(data)
+        # print(data)
 
         client = httpx.Client()
         response = client.post(url, headers=headers, data=data)
@@ -733,7 +737,7 @@ class AeriesAPIz:
                     }
                     if ReportTypeValue["reportName"] != "PrintPrincipalsMonthlyAttendanceReportSCCOE":
                         data["ctl00$MainContent$ctl03$Group"] = ReportTypeValue["groupCode"]
-                        print("Group Code is: ", ReportTypeValue["groupCode"] )
+                        # print("Group Code is: ", ReportTypeValue["groupCode"] )
                         # print("payload data: ", data)
 
                     #get Viewstate
@@ -1086,13 +1090,13 @@ class AeriesAPIz:
             for key in site_info:
                 site_info[key]['classes'] = len(site_info[key]['classes'])
 
-            print("site info: ", site_info)
+            # print("site info: ", site_info)
             return site_info
 
         def getAttendanceReports():
             
             # dwnload_locs = runReportFetcher()
-
+            print('intializing report processesing process')
             Reports(reportMonth, "2024-25", get_site_info(), download_destinations["Attendance Register by DOR"], download_destinations["Attendance Register by Teacher"], download_destinations["Principal's Report"], False)
             
 
@@ -1125,7 +1129,7 @@ class AeriesAPIz:
             grade = item.get('Grade')
 
              # Debug print statements
-            print(f"Description: {description}, Teacher: {teacher_name}, Grade: {grade}")
+            # print(f"Description: {description}, Teacher: {teacher_name}, Grade: {grade}")
 
 
             if description and teacher_name and grade:
@@ -1143,6 +1147,7 @@ class AeriesAPIz:
         # print('counts: ', site_teacher_counts)
         
         return site_teacher_counts
-# test = AeriesAPI()
-# test.login()
-# test.query("LIST STU LN FN ")
+# test = AeriesAPIz()
+# # # test.login()
+# # # test.query("LIST STU LN FN ")
+# test.attendanceReports(6)

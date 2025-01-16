@@ -23,7 +23,7 @@ class Reports():
         self.sourceFiles = []
         self.month = month
         self.date = self.getDate()
-        self.sourceFilesFolder = self.makeFolderLocations()
+        self.monthStorageFolder, self.sourceFilesFolder = self.makeFolderLocations()
         self.AttRegDOR = ATTREGDOR
         self.AttRegTN = ATTREGTN
         self.PrincipalReport = PRINREP
@@ -34,41 +34,45 @@ class Reports():
         self.sortPages(self.month)
         self.fillPDFS(self.month)
         
+    
+    def makeFolderLocations(self):
+        # Path to the Attendance Reports folder on the user's OneDrive Desktop
+        attendanceReport_folder_sccoe = os.path.join(os.path.expanduser("~"), "OneDrive - Santa Clara County Office of Education", "Desktop")
+        attendanceReport_folder_default = os.path.join(os.path.expanduser("~"), "OneDrive", "Desktop", "Attendance Reports")
 
+        # Check if the SCCOE folder exists, otherwise use the default folder
+        if os.path.exists(attendanceReport_folder_sccoe):
+            attendanceReport_folder = os.path.join(os.path.expanduser("~"), "OneDrive - Santa Clara County Office of Education", "Desktop", "Attendance Reports")
+        else:
+            attendanceReport_folder = attendanceReport_folder_default
 
-
-    #Define PDF File Structure and Locations
-    def makeFolderLocations(self): #Needs to add files and structure to users Desktop Directory
-        # Path to the Attendance Reports folder on the user's Desktop
-        attendanceReport_folder = os.path.join(os.path.expanduser("~"), "Desktop", "Attendance Reports")
+        print("Attendance Report Folder: ", attendanceReport_folder)
         
-        # Create the Attendance Reports folder if it doesn't exist
-        if not os.path.exists(attendanceReport_folder):
-            os.mkdir(attendanceReport_folder)
+        # Create the Attendance Reports folder and its parent directories if they don't exist
+        os.makedirs(attendanceReport_folder, exist_ok=True)
         
         # Path to the school year folder
         school_year_folder = os.path.join(attendanceReport_folder, f"{self.schoolYear}")
         
         # Create the school year folder if it doesn't exist
-        if not os.path.exists(school_year_folder):
-            os.mkdir(school_year_folder)
+        os.makedirs(school_year_folder, exist_ok=True)
         
         # Path to the current month's folder
         current_month_folder = os.path.join(school_year_folder, f"Month_{self.month}")
         
         # Create the current month's folder if it doesn't exist
-        if not os.path.exists(current_month_folder):
-            os.mkdir(current_month_folder)
+        os.makedirs(current_month_folder, exist_ok=True)
         
         # Path to the source files folder within the current month's folder
         sourceFilesFolder = os.path.join(current_month_folder, "sourceFiles")
         
         # Create the source files folder if it doesn't exist
-        if not os.path.exists(sourceFilesFolder):
-            os.mkdir(sourceFilesFolder)
+        os.makedirs(sourceFilesFolder, exist_ok=True)
         
-        return sourceFilesFolder
-
+        return current_month_folder, sourceFilesFolder
+    
+    
+    
     def getDate(self):
         date = datetime.now()
         return date
@@ -78,35 +82,60 @@ class Reports():
     mergedAndSortedFiles = []
 
     def sortPages(self, month):
-        # find path to each file
-    
+        # Find path to each file
         folderPath = self.sourceFilesFolder
 
         # pypdf merge
         files = os.listdir(folderPath)
         types = ["PR_Report", "AR_By_DOR", "AR_By_Teacher"]
-        schools = list(self.schoolList.keys())
-        schoolIdx = 0
-        while schoolIdx < len(schools):
+        schools = self.schoolList
+        print("SCHOOLS: ", schools)
+
+        undefined_mergedPDF = PdfFileMerger()
+        undefined_files_exist = False
+
+        for school_name, info in schools.items():
+            print("sorting school_name is: ", school_name)
             mergedPDF = PdfFileMerger()
-           
-            for PDF in [f"{folderPath}\\{types[0]}-{schools[schoolIdx]}.pdf",
-                        f"{folderPath}\\{types[1]}-{schools[schoolIdx]}.pdf",
-                        f"{folderPath}\\{types[2]}-{schools[schoolIdx]}.pdf"]:
-                try: ##fixing school levels that don't exist in a given month
-                    mergedPDF.append(PDF)
+            for report_type in types:
+                pdf_filename = f"{folderPath}\\{report_type}-{school_name} {info['trackName']}.pdf"
+                # print("pdf_filename is: ", pdf_filename)
+                try:
+                    mergedPDF.append(pdf_filename)
                 except FileNotFoundError:
-                    print(f"{folderPath}\\{types[0]}-{schools[schoolIdx]}.pdf not found!")
+                    print(f"{pdf_filename} not found!")
                     continue
-          
-      
+
             # Save the merged PDF to the specified location
-            output_path = f"{self.sourceFilesFolder}\\Month_{month}\\{schools[schoolIdx]}.pdf"
+            output_path = f"{self.monthStorageFolder}\\{school_name} {info['trackName']}.pdf"
+            # print("output_path is: ", output_path)
             mergedPDF.write(output_path)
             mergedPDF.close()
-            self.mergedAndSortedFiles.append(f"{self.sourceFilesFolder}\\{schools[schoolIdx]}.pdf")
-        
-            schoolIdx += 1
+            self.mergedAndSortedFiles.append(output_path)
+
+        # Handle undefined files
+        undefined_files = [file for file in files if "undefined" in file.lower()]
+        for report_type in types:
+            for file in undefined_files:
+                if report_type in file:
+                    undefined_files_exist = True
+                    pdf_filename = os.path.join(folderPath, file)
+                    # print("undefined pdf_filename is: ", pdf_filename)
+                    try:
+                        undefined_mergedPDF.append(pdf_filename)
+                    except FileNotFoundError:
+                        print(f"{pdf_filename} not found!")
+                        continue
+
+        if undefined_files_exist:
+            # Save the merged undefined PDF to the specified location
+            undefined_output_path = f"{self.monthStorageFolder}\\Undefined.pdf"
+            # print("undefined_output_path is: ", undefined_output_path)
+            undefined_mergedPDF.write(undefined_output_path)
+            undefined_mergedPDF.close()
+            self.mergedAndSortedFiles.append(undefined_output_path)
+
+            
     def processRawAttReports(self,filepath):
         pdf = PdfFileReader(filepath, "rb")
 
@@ -114,6 +143,7 @@ class Reports():
             def __init__(subSelf, page_num):
                 subSelf.page_object = pdf.getPage(page_num)
                 subSelf.text = subSelf.page_object.extractText()
+                # print("SubSelf.text is: ", subSelf.text)
 
 
                 if "Principal's Monthly Attendance Report" in subSelf.text:
@@ -127,50 +157,33 @@ class Reports():
 
 
 
-                if "SOUTH COUNTY ANNEX [COE]" in subSelf.text and "Middle 7-8" not in subSelf.text and "Elementary 4-6" not in subSelf.text:
-                    subSelf.school = "SOUTH COUNTY ANNEX [COE]"
-                elif "SOUTH COUNTY ANNEX [COE]" in subSelf.text and "Middle 7-8" in subSelf.text:
-                    subSelf.school = "SOUTH COUNTY ANNEX [COE] Middle 7-8"
-                elif "SOUTH COUNTY ANNEX [COE]" in subSelf.text and "Elementary 4-6" in subSelf.text:
-                    subSelf.school = "SOUTH COUNTY ANNEX [COE] Elementary 4-6"
-                elif "WILCOX HIGH [COE]" in subSelf.text:
-                    subSelf.school = "WILCOX HIGH [COE]"
-                elif "PIEDMONT HILLS HIGH [COE]" in subSelf.text and "Middle" in subSelf.text:
-                    subSelf.school = "PIEDMONT HILLS HIGH [COE] Middle 7-8"
-                elif "PIEDMONT HILLS HIGH [COE]" in subSelf.text and "Middle" not in subSelf.text:
-                    subSelf.school = "PIEDMONT HILLS HIGH [COE]"
-                elif "SANTA TERESA HIGH [COE]" in subSelf.text:
-                    subSelf.school = "SANTA TERESA HIGH [COE]"
-                elif "SILVER CREEK HIGH [COE]" in subSelf.text:
-                    subSelf.school = "SILVER CREEK HIGH [COE]"
-                elif "MONTA VISTA HIGH [COE]" in subSelf.text:
-                    subSelf.school = "MONTA VISTA HIGH [COE]"
-                elif "GATEWAY ELEMENTARY [COE]" in subSelf.text and "Elementary K-3\nAttendance Category:" in subSelf.text:
-                    subSelf.school = "GATEWAY ELEMENTARY [COE] Elementary K-3"
-                elif "GATEWAY ELEMENTARY [COE]" in subSelf.text and "Elementary 4-6\nAttendance Category:" in subSelf.text and "Track:\nGILROY" in subSelf.text:
-                    subSelf.school = "GATEWAY ELEMENTARY [COE] Elementary 4-6 Track GILROY"
-                elif "GATEWAY ELEMENTARY [COE]" in subSelf.text and "Elementary 4-6\nAttendance Category:" in subSelf.text:
-                    subSelf.school = "GATEWAY ELEMENTARY [COE] Elementary 4-6 Track GATEWAY ELEM"
-                elif "GATEWAY ELEMENTARY [COE]" in subSelf.text and "Middle 7-8\nAttendance Category:" in subSelf.text:
-                    subSelf.school = "GATEWAY ELEMENTARY [COE] Middle 7-8" 
-                elif "GATEWAY ELEMENTARY [COE]" in subSelf.text and "High School 9-12\nAttendance Category:" in subSelf.text:
-                    subSelf.school = "GATEWAY ELEMENTARY [COE] High School 9-12"
-                elif "WESTMONT HIGH [COE]" in subSelf.text:
-                    subSelf.school = "WESTMONT HIGH [COE]"
-                elif "GILROY HIGH [COE]" in subSelf.text and "High School 9-12" in subSelf.text:
-                    subSelf.school = "GILROY HIGH [COE] High School 9-12"
-                elif "GILROY HIGH [COE]" in subSelf.text and "Middle" in subSelf.text:
-                    subSelf.school = 'GILROY HIGH [COE] Middle 7-8'
-                else:
-                    subSelf.school = "Undefined"
-                    print("Match for filename not found")
+                subSelf.school = "Undefined"
+                subSelf.track = "Undefined"
+
+                # print("School List Items: ", self.schoolList.items())
+
+                for school, info in self.schoolList.items():
+                    # print("school is: ", school)
+                    if info['site'] in subSelf.text:
+                        # print("site is: ", info['site'])
+                        # if not info['gradeLevels']:
+                        # subSelf.school = info['site']
+                        #     break
+                        
+                        if info['grades'] in subSelf.text and f"Track:\n{info['trackName']}" in subSelf.text:
+                            subSelf.school = f"{school}"
+                            subSelf.track = info['trackName']
+                            break
+                        # if subSelf.school != "Undefined":
+                        #     break
+
+                        # print('this school is: ', subSelf.school)
+
+                if subSelf.school == "Undefined":
+                    print("Match for filename not found fool!")
 
       
-                subSelf.fileName = f"\\{subSelf.reportType}-{subSelf.school}.pdf"
-
-
-
-
+                subSelf.fileName = f"\\{subSelf.reportType}-{subSelf.school} {subSelf.track}.pdf"
 
 
         page_num = 0
@@ -211,75 +224,83 @@ class Reports():
 
             page_num += 1
 
-    classTotalsPerSite = {
-        "GATEWAY ELEMENTARY": "1",
-        "GILROY HIGH": "1",
-        "MONTA VISTA": "2",
-        "PIEDMONT HILLS": "2",
-        "SANTA TERESA HIGH": "3",
-        "SILVER CREEK HIGH": "2",
-        "SOUTH COUNTY ANNEX": "1",
-        "WESTMONT HIGH": "1",
-        "WILCOX HIGH": "1"}
 
-    def pdfMathAndFill(self, pathToPdf):
+    
+    def fillPDFS(self, month):
+        print("MERGED AND SORTED FILES: ", self.mergedAndSortedFiles)  
+        for file in self.mergedAndSortedFiles:
+            filename = os.path.basename(file)
+            classNum = "Undefined"  # Default value
+            for key, info in self.schoolList.items():
+                if key in filename:
+                    site_name = info['site']
+                    grade_level = info['grades']
+                    classNum = info['classes']
+                    break
+
+            # print('ClassNum is: ', classNum)
+            self.pdfMathAndFill(file, classNum)
+        
+        print(f"Month {month} successfully completed!")
+    
+
+    def pdfMathAndFill(self, pathToPdf, classNum):
         page_Fitz = fitz.open(pathToPdf)
 
+        # print("DEBUG - page_Fitz is: ", page_Fitz)
+
         for page in page_Fitz:
+            # print("DEBUG - page is: ", page)
             # color code for font
             magenta4 = (0.5450980392156862, 0.0, 0.5450980392156862)
 
             totalDays = page.get_text(clip=[463, 352, 478, 364])
             accTestTotal = page.get_text(clip=[512, 458, 527, 471])
             unenrolledTotal = page.get_text(clip=[539, 385, 545, 398])
-            print("unenrolledTotal is: ", unenrolledTotal)
+            # print("unenrolledTotal is: ", unenrolledTotal)
             totalAbs = page.get_text(clip=[435, 385, 445, 397])
 
-            classNum = "0"  # Default value
-            for key in self.classTotalsPerSite:
-                if key in page_Fitz.name:
-                    classNum = self.classTotalsPerSite[key]
-                    print("classNum is: " + classNum)
+            # Ensure the variables contain valid integer values
+            try:
+                totalDays = int(totalDays) if totalDays else 0
+                accTestTotal = int(accTestTotal) if accTestTotal else 0
+                unenrolledTotal = int(unenrolledTotal) if unenrolledTotal else 0
+                totalAbs = int(totalAbs) if totalAbs else 0
+            except ValueError as e:
+                print(f"Error converting text to integer: {e}")
+                continue
+
 
             print("------------------ ", page_Fitz.name, " ---------------------")
             if int(totalDays) + int(totalAbs) + int(unenrolledTotal) == int(accTestTotal):
                 print("Success! Attendance numbers match!")
                 print("Filling sheet....")
-                page.insert_text(fitz.Point(271, 229), classNum, fontname="helv", fontsize=14, color=magenta4)  # Num 1
-                page.insert_text(fitz.Point(271, 335), classNum, fontsize=14, color=magenta4)  # Num 2
-                page.insert_text(fitz.Point(268, 430), str(accTestTotal) + " \u2713", fontsize=14,
-                                 color=magenta4)  # Accuracy Check
+                page.insert_text(fitz.Point(271, 229), str(classNum), fontname="helv", fontsize=14, color=magenta4)  # Num 1
+                page.insert_text(fitz.Point(271, 335), str(classNum), fontsize=14, color=magenta4)  # Num 2
+                page.insert_text(fitz.Point(268, 430), str(accTestTotal) + " \u2713", fontsize=14, color=magenta4)  # Accuracy Check
                 page.insert_text(fitz.Point(243, 585), "x3966", fontsize=14, color=magenta4)  # Phone ext
                 page.insert_text(fitz.Point(514, 562), str(date.today()), fontsize=14, color=magenta4)
-            else:
-                print("NOOOOO!!!! Accuracy check failure :(")
-                #raise ArithmeticError("Your math sucks. You need to seriously fix something in AERIES")
-                
-            break
-        try: ##dont save if 0 pages because this kind of school does not exist in given month
+
+        try:
             page_Fitz.saveIncr()
         except ValueError:
             print("No pages to do math and fill in for this file")
             pass
-    def fillPDFS(self, month):
-        for file in self.mergedAndSortedFiles:
-            self.pdfMathAndFill(file)
-        
-        print(f"Month {month} sucessfully completed!")
+    
 
 
 
-def main():
-    valid_month_numbers = set(map(str, range(1, 13)))
+# def main():
+#     valid_month_numbers = set(map(str, range(1, 13)))
 
-    user_input = input("Enter a month or month number (separated by spaces if multiple): ").split()
+#     user_input = input("Enter a month or month number (separated by spaces if multiple): ").split()
 
-    for input_value in user_input:
-        if input_value in valid_month_numbers:
-            Reports(input_value)
-        else:
-            print(f"Invalid input: {input_value}. Please enter a valid month number (1-12).")
+#     for input_value in user_input:
+#         if input_value in valid_month_numbers:
+#             Reports(input_value, "2024-2025", schoolList)
+#         else:
+#             print(f"Invalid input: {input_value}. Please enter a valid month number (1-12).")
 
-if __name__ == "__main__":
-    main()
+# # if __name__ == "__main__":
+# #     main()
 
