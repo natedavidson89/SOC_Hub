@@ -1148,6 +1148,6 @@ class AeriesAPIz:
         
         return site_teacher_counts
 # test = AeriesAPIz()
-# # # test.login()
-# # # test.query("LIST STU LN FN ")
+# # # # test.login()
+# # # # test.query("LIST STU LN FN ")
 # test.attendanceReports(6)

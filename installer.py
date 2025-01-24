@@ -7,7 +7,7 @@ from PyQt5.QtWidgets import QApplication, QMessageBox
 def copy_files(install_dir):
     # Determine the base directory where the executable or script is located
     base_dir = os.path.dirname(os.path.realpath(sys.executable if getattr(sys, 'frozen', False) else __file__))
-    files_to_copy = ['main.exe', 'version.txt']  # Add other necessary files here
+    files_to_copy = ['main.exe', 'version.txt', 'updater.py']  # Add other necessary files here
 
     config_dir = os.path.join(install_dir, 'config')
     os.makedirs(config_dir, exist_ok=True)

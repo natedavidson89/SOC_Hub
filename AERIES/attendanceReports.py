@@ -1,17 +1,17 @@
 import os, sys
 sys.path.append('./')
 from PyPDF4 import PdfFileReader, PdfFileWriter, PdfFileMerger
-import time
+# import time
 from datetime import datetime
 from datetime import date
 import glob2 as glob
 import os.path
-import fitz
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-import threading
-import shutil
-import platform
+
+# from selenium.webdriver.support.ui import WebDriverWait
+# from selenium.webdriver.support import expected_conditions as EC
+# import threading
+# import shutil
+# import platform
 
 
 
@@ -35,16 +35,19 @@ class Reports():
         self.fillPDFS(self.month)
         
     
-    def makeFolderLocations(self):
+    def makeFolderLocations(self): # add if for no one drive at all for Josue and Firl
         # Path to the Attendance Reports folder on the user's OneDrive Desktop
-        attendanceReport_folder_sccoe = os.path.join(os.path.expanduser("~"), "OneDrive - Santa Clara County Office of Education", "Desktop")
+        attendanceReportFolderNoOneDrive = os.path.join(os.path.expanduser("~"),"Desktop", "Attendance Reports")
+        attendanceReport_folder_sccoe = os.path.join(os.path.expanduser("~"), "OneDrive - Santa Clara County Office of Education", "Desktop", "Attendance Reports")
         attendanceReport_folder_default = os.path.join(os.path.expanduser("~"), "OneDrive", "Desktop", "Attendance Reports")
 
         # Check if the SCCOE folder exists, otherwise use the default folder
-        if os.path.exists(attendanceReport_folder_sccoe):
-            attendanceReport_folder = os.path.join(os.path.expanduser("~"), "OneDrive - Santa Clara County Office of Education", "Desktop", "Attendance Reports")
-        else:
+        if os.path.exists(os.path.join(os.path.expanduser("~"), "OneDrive - Santa Clara County Office of Education", "Desktop")):
+            attendanceReport_folder = attendanceReport_folder_sccoe
+        elif os.path.exists(os.path.join(os.path.expanduser("~"), "OneDrive", "Desktop")):
             attendanceReport_folder = attendanceReport_folder_default
+        else:
+            attendanceReport_folder = attendanceReportFolderNoOneDrive
 
         print("Attendance Report Folder: ", attendanceReport_folder)
         
@@ -243,22 +246,24 @@ class Reports():
         
         print(f"Month {month} successfully completed!")
     
-
+    
     def pdfMathAndFill(self, pathToPdf, classNum):
-        page_Fitz = fitz.open(pathToPdf)
-
-        # print("DEBUG - page_Fitz is: ", page_Fitz)
-
-        for page in page_Fitz:
-            # print("DEBUG - page is: ", page)
-            # color code for font
+        import fitz
+        # Open the PDF file
+        pdf_document = fitz.open(pathToPdf)
+        
+        # Check if the PDF has at least one page
+        if pdf_document.page_count > 0:
+            # Get the first page
+            first_page = pdf_document[0]
+            
+            # Perform the filling operation on the first page
             magenta4 = (0.5450980392156862, 0.0, 0.5450980392156862)
 
-            totalDays = page.get_text(clip=[463, 352, 478, 364])
-            accTestTotal = page.get_text(clip=[512, 458, 527, 471])
-            unenrolledTotal = page.get_text(clip=[539, 385, 545, 398])
-            # print("unenrolledTotal is: ", unenrolledTotal)
-            totalAbs = page.get_text(clip=[435, 385, 445, 397])
+            totalDays = first_page.get_text(clip=[463, 352, 478, 364])
+            accTestTotal = first_page.get_text(clip=[512, 458, 527, 471])
+            unenrolledTotal = first_page.get_text(clip=[539, 385, 545, 398])
+            totalAbs = first_page.get_text(clip=[435, 385, 445, 397])
 
             # Ensure the variables contain valid integer values
             try:
@@ -268,25 +273,26 @@ class Reports():
                 totalAbs = int(totalAbs) if totalAbs else 0
             except ValueError as e:
                 print(f"Error converting text to integer: {e}")
-                continue
 
-
-            print("------------------ ", page_Fitz.name, " ---------------------")
+            print("------------------ ", pdf_document.name, " ---------------------")
             if int(totalDays) + int(totalAbs) + int(unenrolledTotal) == int(accTestTotal):
                 print("Success! Attendance numbers match!")
                 print("Filling sheet....")
-                page.insert_text(fitz.Point(271, 229), str(classNum), fontname="helv", fontsize=14, color=magenta4)  # Num 1
-                page.insert_text(fitz.Point(271, 335), str(classNum), fontsize=14, color=magenta4)  # Num 2
-                page.insert_text(fitz.Point(268, 430), str(accTestTotal) + " \u2713", fontsize=14, color=magenta4)  # Accuracy Check
-                page.insert_text(fitz.Point(243, 585), "x3966", fontsize=14, color=magenta4)  # Phone ext
-                page.insert_text(fitz.Point(514, 562), str(date.today()), fontsize=14, color=magenta4)
+                first_page.insert_text(fitz.Point(271, 229), str(classNum), fontname="helv", fontsize=14, color=magenta4)  # Num 1
+                first_page.insert_text(fitz.Point(271, 335), str(classNum), fontsize=14, color=magenta4)  # Num 2
+                first_page.insert_text(fitz.Point(268, 430), str(accTestTotal) + " \u2713", fontsize=14, color=magenta4)  # Accuracy Check
+                first_page.insert_text(fitz.Point(243, 585), "x3966", fontsize=14, color=magenta4)  # Phone ext
+                first_page.insert_text(fitz.Point(514, 562), str(date.today()), fontsize=14, color=magenta4)
 
         try:
-            page_Fitz.saveIncr()
+            pdf_document.saveIncr()
         except ValueError:
             print("No pages to do math and fill in for this file")
             pass
     
+        pdf_document.close()
+    
+
 
 
 
