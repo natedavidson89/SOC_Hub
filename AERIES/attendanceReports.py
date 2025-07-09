@@ -16,8 +16,9 @@ import os.path
 
 
 class Reports():
-    def __init__(self, month, schoolYear, schoolList, ATTREGDOR=None, ATTREGTN=None, PRINREP=None, ESY=False):
+    def __init__(self, month, schoolYear, schoolList, ATTREGDOR=None, ATTREGTN=None, PRINREP=None, ESY=False, useTrackNames=True):
         print(f"Getting Month {month}...")
+        self.useTrackNames = useTrackNames
         self.ESY =ESY
         self.schoolYear = schoolYear
         self.sourceFiles = []
@@ -101,8 +102,10 @@ class Reports():
             print("sorting school_name is: ", school_name)
             mergedPDF = PdfFileMerger()
             for report_type in types:
-                pdf_filename = f"{folderPath}\\{report_type}-{school_name} {info['trackName']}.pdf"
-                # print("pdf_filename is: ", pdf_filename)
+                if self.useTrackNames == False:
+                    pdf_filename = f"{folderPath}\\{report_type}-{school_name}.pdf" # {info['trackName']}.pdf"
+                else:
+                    pdf_filename = f"{folderPath}\\{report_type}-{school_name} {info['trackName']}.pdf"
                 try:
                     mergedPDF.append(pdf_filename)
                 except FileNotFoundError:
@@ -110,7 +113,10 @@ class Reports():
                     continue
 
             # Save the merged PDF to the specified location
-            output_path = f"{self.monthStorageFolder}\\{school_name} {info['trackName']}.pdf"
+            if self.useTrackNames == False:
+                output_path = f"{self.monthStorageFolder}\\{school_name}.pdf"
+            else:
+                output_path = f"{self.monthStorageFolder}\\{school_name} {info['trackName']}.pdf"
             # print("output_path is: ", output_path)
             mergedPDF.write(output_path)
             mergedPDF.close()
@@ -172,11 +178,17 @@ class Reports():
                         # if not info['gradeLevels']:
                         # subSelf.school = info['site']
                         #     break
-                        
-                        if info['grades'] in subSelf.text and f"Track:\n{info['trackName']}" in subSelf.text:
-                            subSelf.school = f"{school}"
-                            subSelf.track = info['trackName']
-                            break
+                        if self.useTrackNames == False:
+                            if info['grades'] in subSelf.text:
+                                subSelf.school = f"{school}"
+                                subSelf.track = "Undefined"
+                                break
+
+                        else:
+                            if info['grades'] in subSelf.text and f"Track:\n{info['trackName']}" in subSelf.text:
+                                subSelf.school = f"{school}"
+                                subSelf.track = info['trackName']
+                                break
                         # if subSelf.school != "Undefined":
                         #     break
 
@@ -185,8 +197,10 @@ class Reports():
                 if subSelf.school == "Undefined":
                     print("Match for filename not found fool!")
 
-      
-                subSelf.fileName = f"\\{subSelf.reportType}-{subSelf.school} {subSelf.track}.pdf"
+                if self.useTrackNames == False:
+                    subSelf.fileName = f"\\{subSelf.reportType}-{subSelf.school}.pdf"# {subSelf.track}.pdf"
+                else:
+                    subSelf.fileName = f"\\{subSelf.reportType}-{subSelf.school} {subSelf.track}.pdf"
 
 
         page_num = 0
@@ -309,4 +323,3 @@ class Reports():
 
 # # if __name__ == "__main__":
 # #     main()
-

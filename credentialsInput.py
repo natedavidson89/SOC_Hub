@@ -1,9 +1,11 @@
 from PyQt5.QtWidgets import QDialog, QVBoxLayout, QLabel, QLineEdit, QPushButton, QFormLayout
 
+#need to add ability to differentiate between types of credentials requests, eg. AESOP, Google, etc. as a parameter
+
 class CredentialsInputDialog(QDialog):
     def __init__(self, parent=None):
         super().__init__(parent)
-        self.setWindowTitle("Enter AERIES Credentials")
+        self.setWindowTitle(f"Enter AERIES Credentials")
         self.setGeometry(100, 100, 300, 200)
 
         self.layout = QVBoxLayout()

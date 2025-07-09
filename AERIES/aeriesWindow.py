@@ -1,6 +1,6 @@
 import sys
 # import os
-from PyQt5.QtWidgets import QApplication, QMainWindow, QLabel, QPushButton, QWidget, QVBoxLayout, QHBoxLayout, QLineEdit, QDialog, QFormLayout
+from PyQt5.QtWidgets import QApplication, QMainWindow, QLabel, QPushButton, QWidget, QVBoxLayout, QHBoxLayout, QLineEdit, QDialog, QFormLayout, QCheckBox
 from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QFont
 
@@ -10,7 +10,7 @@ if getattr(sys, 'frozen', False):
     from AERIES.AERIES_API import AeriesAPIz
 else:
     # If running as a script
-    from AERIES_API import AeriesAPIz
+    from AERIES.AERIES_API import AeriesAPIz
 
 class AeriesWindow(QMainWindow):
     def __init__(self, api=None):
@@ -52,6 +52,10 @@ class AttendanceReportWindow(QDialog):
 
         layout = QFormLayout()
 
+        self.track_checkbox = QCheckBox('Include Track', self)
+        self.track_checkbox.setChecked(True)  # Checked by default
+
+
         self.label = QLabel('Attendance Report for which month?')
         self.input = QLineEdit(self)
 
@@ -60,15 +64,21 @@ class AttendanceReportWindow(QDialog):
         self.submit_button = QPushButton('Submit', self)
         self.submit_button.clicked.connect(self.submit)
 
+        layout.addWidget(self.track_checkbox)
         layout.addWidget(self.submit_button)
 
         self.setLayout(layout)
 
     def submit(self):
         month = self.input.text()
-        print(f"Generating attendance report for {month}")
-        self.api.attendanceReports(month)
+        use_track_names = self.track_checkbox.isChecked()  # Check if the checkbox is checked
+        print(f"Generating attendance report for {month} (Include Track: {use_track_names})")
+        print("API Type: ", type(self.api))
+        print(self.api.attendanceReports)
+        self.api.attendanceReports(month, useTrackNames=use_track_names)  # Pass the parameter
         self.close()
+
+
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)

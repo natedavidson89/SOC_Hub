@@ -2,6 +2,7 @@ import os
 import shutil
 import sys
 import winshell
+import filecmp
 from PyQt5.QtWidgets import QApplication, QMessageBox
 
 def copy_files(install_dir):
@@ -20,8 +21,14 @@ def copy_files(install_dir):
             dest_file = os.path.join(install_dir, os.path.basename(file))
         
         if os.path.exists(source_file):
-            shutil.copy2(source_file, dest_file)
-            print(f"Copied {source_file} to {dest_file}")
+            if os.path.abspath(source_file) != os.path.abspath(dest_file):
+                if os.path.exists(dest_file) and not filecmp.cmp(source_file, dest_file, shallow=False):
+                    os.remove(dest_file)
+                    print(f"Deleted existing file {dest_file}")
+                shutil.copy2(source_file, dest_file)
+                print(f"Copied {source_file} to {dest_file}")
+            else:
+                print(f"Source and destination are the same for {source_file}, skipping copy.")
         else:
             print(f"Source file {source_file} does not exist")
 
@@ -52,6 +59,7 @@ def main():
     copy_files(install_dir)
     create_shortcut(install_dir)
     QMessageBox.information(None, "Installation Complete", "SOC Hub has been installed successfully.")
+    sys.exit(0)
 
 if __name__ == '__main__':
     main()

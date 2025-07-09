@@ -4,13 +4,15 @@ from PyQt5.QtCore import Qt
 import sys
 import subprocess
 import os
+import requests
+import yaml
+
 # from updater import UpdateWindow  # Import the UpdateWindow class
 from AERIES.AERIES_API import *
 from AERIES.classListWindow import *
 # from AESOP.AESOP_API import *
 from AERIES.aeriesWindow import *
 import Update3
-import yaml
 
 # CONFIG_FILE = 'config_path.txt'
 
@@ -33,6 +35,13 @@ class WelcomeWindow(QWidget):
         # Main welcome label
         self.main_label = QLabel('Welcome to the Super SOC Hub', self)
         self.main_label.setAlignment(Qt.AlignCenter)
+
+         # Add ESY checkbox
+        self.esy_checkbox = QCheckBox("ESY")
+        self.esy_checkbox.stateChanged.connect(self.on_esy_checked)
+        
+
+
         self.classList_button = QPushButton('Classlists', self)
         self.classList_button.clicked.connect(self.openClassListWindow)
         self.aeriesButton = QPushButton('Aeries', self)
@@ -43,6 +52,7 @@ class WelcomeWindow(QWidget):
         self.formsButton = QPushButton('Forms', self)
 
         self.layout.addWidget(self.main_label)
+        self.layout.addWidget(self.esy_checkbox)
         self.layout.addWidget(self.classList_button) # Add the button to the layout
         self.layout.addWidget(self.aeriesButton)
         self.layout.addWidget(self.aesopButton)
@@ -91,6 +101,12 @@ class WelcomeWindow(QWidget):
             self.update_window.close()
         event.accept()
 
+    def on_esy_checked(self, state):
+        if state == Qt.Checked:
+            self.aeriesAPI = AeriesAPIz(ESY=True)
+            print("ESY Checked")
+        else:
+            self.aeriesAPI = AeriesAPIz(ESY=False)
 
     # def get_config_path(self):
     #     if os.path.exists(CONFIG_FILE):
@@ -122,14 +138,25 @@ class WelcomeWindow(QWidget):
 
 
 def check_for_updates():
-    Update3.main()
+    config_dir = os.path.join(os.path.dirname(sys.executable), 'config')
+    version_file_path = os.path.join(config_dir, 'version.txt')
+    
+    # Read the current version from version.txt
+    with open(version_file_path, 'r') as version_file:
+        current_version = version_file.read().strip()
+    
+    latest_version_url = "https://api.github.com/repos/natedavidson89/SOC_Hub/releases/latest"
+    response = requests.get(latest_version_url)
+    latest_version = response.json()["tag_name"]
 
-
-
-
+    if current_version != latest_version:
+        print(f"New version available: {latest_version} (local: {current_version})")
+        updater_exe_path = os.path.join(os.path.dirname(sys.executable), 'updater.exe')
+        os.startfile(updater_exe_path)
+        sys.exit()
 
 def main():
-    check_for_updates() #disable when test, enable when uploading
+    check_for_updates()  # Check for updates before starting the main application
     app = QApplication(sys.argv)
     window = WelcomeWindow()
     window.show()

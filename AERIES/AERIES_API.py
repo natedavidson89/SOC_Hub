@@ -69,7 +69,9 @@ class AeriesAPIz:
             self.collect_credentials()
 
         self.ESY = ESY
-        self.school = self.aeriesSchool if self.ESY == False else f"2{self.aeriesSchool}"
+        if self.ESY == True:
+            print("ESY Initialized")
+        self.school = self.aeriesSchool if self.ESY == False else f"1{self.aeriesSchool}"
         self.database = "Special Ed" if self.ESY == False else "Summer/ESY"
         self.client = self.login()
 
@@ -663,7 +665,7 @@ class AeriesAPIz:
                     response = self.client.post(url, headers=headers, data=payload)
                 fillAbsenceCode(absenceCode)
 
-    def attendanceReports(self, reportMonth):
+    def attendanceReports(self, reportMonth, useTrackNames=True):
 
         download_destinations = {}
 
@@ -1081,9 +1083,15 @@ class AeriesAPIz:
                             break
 
                     if grade_level:
-                        key = f"{description} {grade_level} Track {track}"
+                        if useTrackNames == False:
+                            key = f"{description} {grade_level}"# Track {track}"
+                        else:
+                            key = f"{description} {grade_level} Track {trackName}"
                         if key not in site_info:
-                            site_info[key] = {'site': description, 'classes': set(), 'grades': grade_level, 'trackName': trackName}
+                            if useTrackNames == False:
+                                site_info[key] = {'site': description, 'classes': set(), 'grades': grade_level}
+                            else:
+                                site_info[key] = {'site': description, 'classes': set(), 'grades': grade_level, 'trackName': trackName}
                         site_info[key]['classes'].add(teacher)
 
             # Convert the sets to counts
@@ -1097,7 +1105,7 @@ class AeriesAPIz:
             
             # dwnload_locs = runReportFetcher()
             print('intializing report processesing process')
-            Reports(reportMonth, "2024-25", get_site_info(), download_destinations["Attendance Register by DOR"], download_destinations["Attendance Register by Teacher"], download_destinations["Principal's Report"], False)
+            Reports(reportMonth, "2024-25", get_site_info(), download_destinations["Attendance Register by DOR"], download_destinations["Attendance Register by Teacher"], download_destinations["Principal's Report"], False, useTrackNames=useTrackNames)
             
 
         getAttendanceReports()
@@ -1147,7 +1155,3 @@ class AeriesAPIz:
         # print('counts: ', site_teacher_counts)
         
         return site_teacher_counts
-# test = AeriesAPIz()
-# # # # test.login()
-# # # # test.query("LIST STU LN FN ")
-# test.attendanceReports(6)
