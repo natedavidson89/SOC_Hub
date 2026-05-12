@@ -3,7 +3,7 @@
 // @namespace    soc-hub
 // @version      1.0
 // @description  Adds automation button to attenance management
-// @match        https://santaclaracoe.aeries.net/*
+// @match        https://santaclaracoe.aeries.net/admin/AttendanceManagement.aspx
 // @grant        none
 // @downloadURL  https://raw.githubusercontent.com/natedavidson89/SOC_Hub/main/aeries_attendance_note_auto.user.js
 // @updateURL    https://raw.githubusercontent.com/natedavidson89/SOC_Hub/main/aeries_attendance_note_auto.user.js
