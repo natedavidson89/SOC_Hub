@@ -1,3 +1,14 @@
+// ==UserScript==
+// @name         Aeries Attendance Note Auto Button
+// @namespace    soc-hub
+// @version      1.0
+// @description  Adds automation button to attenance management
+// @match        https://santaclaracoe.aeries.net/*
+// @grant        none
+// @downloadURL  https://raw.githubusercontent.com/natedavidson89/SOC_Hub/main/aeries_attendance_note_auto.user.js
+// @updateURL    https://raw.githubusercontent.com/natedavidson89/SOC_Hub/main/aeries_attendance_note_auto.user.js
+// ==/UserScript==
+
 (function () {
   "use strict";
 
