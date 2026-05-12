@@ -1,3 +1,14 @@
+// ==UserScript==
+// @name         Aeries SCIA Copy Button
+// @namespace    soc-hub
+// @version      1.0
+// @description  Adds copy button to SCIA
+// @match        https://santaclaracoe.aeries.net/*
+// @grant        none
+// @downloadURL  https://raw.githubusercontent.com/natedavidson89/SOC_Hub/main/aeries_scia_copy_button.user.js
+// @updateURL    https://raw.githubusercontent.com/natedavidson89/SOC_Hub/main/aeries_scia_copy_button.user.js
+// ==/UserScript==
+
 (function () {
   'use strict';
     console.log('✅ Tampermonkey SCIA Copy script LOADED');
