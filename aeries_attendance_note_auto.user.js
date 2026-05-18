@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Aeries Attendance Note Auto Button
 // @namespace    soc-hub
-// @version      1.1
+// @version      1.2
 // @description  Adds automation button to attenance management
 // @match        https://santaclaracoe.aeries.net/admin/AttendanceManagement.aspx*
 // @grant        none
@@ -11,17 +11,16 @@
 
 (function () {
   "use strict";
-  console.log('✅ Tampermonkey Attendance Automation script LOADED');
+  console.log('Tampermonkey Attendance Automation script LOADED');
 
-  // =====================================================
-  // CONFIG
-  // =====================================================
+  // basic config stuff
 
   const BUTTON_ID = "btnCustomAction";
 
   const TARGET_TD_SELECTOR =
     "#aTabFilters > table > tbody > tr:nth-child(1) > td:nth-child(5)";
 
+  // keywords to figure out what attendance code to use
   const absenceCodeMap = [
     { keywords: ["sick", "flu", "covid", "sk - sick", "hospital"], code: "B" },
     {
@@ -45,16 +44,11 @@
   const NOTE_LOAD_DELAY = 300;
   const BETWEEN_NOTES_DELAY = 900;
 
-  // =====================================================
-  // UTIL
-  // =====================================================
-
+  // simple sleep helper
   const sleep = ms => new Promise(r => setTimeout(r, ms));
 
-  // =====================================================
-  // INSERT BUTTON
-  // =====================================================
 
+  // puts the button on the page if it isn't already there
   function insertButton() {
     const td = document.querySelector(TARGET_TD_SELECTOR);
     if (!td || document.getElementById(BUTTON_ID)) return;
@@ -73,16 +67,16 @@
     td.appendChild(btn);
   }
 
+  // watch for changes in case the page reloads stuff dynamically
   new MutationObserver(insertButton).observe(document.body, {
     childList: true,
     subtree: true
   });
+
   insertButton();
 
-  // =====================================================
-  // WAIT FOR IFRAME
-  // =====================================================
 
+  // wait until the iframe with the note is actually ready
   async function waitForNoteIframe(timeout = 3000) {
     const start = Date.now();
 
@@ -102,10 +96,8 @@
     throw new Error("Timed out waiting for attendance note iframe.");
   }
 
-  // =====================================================
-  // ABSENCE CODE LOGIC (WORKING VERSION)
-  // =====================================================
 
+  // decides which attendance code to use based on text
   function getAttendanceCodeFromReasons(reasons) {
     if (!reasons || !reasons.length) return "U";
 
@@ -117,24 +109,24 @@
       }
     }
 
-    // ✅ non‑matching text stays A
+    // if nothing matches, just leave it as A
     return "A";
   }
 
-    function closeLastAttendanceModal() {
-  const closes = document.querySelectorAll(".k-i-close");
-  if (closes.length > 4) {
-    closes[4].click();
-    console.log("✅ Final attendance modal closed via k-i-close[4]");
-  } else {
-    console.warn("⚠️ Expected k-i-close[4] not found");
+
+  // closes the final leftover modal (aeries sometimes leaves one open)
+  function closeLastAttendanceModal() {
+    const closes = document.querySelectorAll(".k-i-close");
+    if (closes.length > 4) {
+      closes[4].click();
+      console.log("Final attendance modal closed via k-i-close[4]");
+    } else {
+      console.warn("Expected k-i-close[4] not found");
+    }
   }
-}
 
-  // =====================================================
-  // SCRAPE REASONS (WORKING VERSION)
-  // =====================================================
 
+  // pulls whatever info we can find from the open note
   function getReasonsFromOpenNote() {
     try {
       const iframe = document.querySelector(".k-window-iframecontent iframe");
@@ -172,23 +164,23 @@
 
       return Array.from(reasons);
     } catch (e) {
-      console.warn("⚠️ Could not read reasons:", e);
+      console.warn("Could not read reasons:", e);
       return [];
     }
   }
 
-  // =====================================================
-  // WRITE DEFAULT NOTE
-  // =====================================================
 
+  // fills in the default message if nothing is there and saves it
   function writeDefaultNoteAndSave() {
     const iframe = document.querySelector(".k-window-iframecontent iframe");
     if (!iframe?.contentWindow) return;
 
     const doc = iframe.contentWindow.document;
+
     const textarea =
       doc.querySelector("textarea[id*='txtCO']") ||
       doc.querySelector("textarea[name*='txtCO']");
+
     const saveBtn =
       doc.querySelector("a[id*='LinkButton'][title*='Save']") ||
       doc.querySelector("a.abtnSave");
@@ -196,15 +188,15 @@
     if (!textarea || textarea.value.trim()) return;
 
     textarea.value = DEFAULT_NOTE_TEXT;
+
     textarea.dispatchEvent(new Event("input", { bubbles: true }));
     textarea.dispatchEvent(new Event("change", { bubbles: true }));
+
     saveBtn?.click();
   }
 
-  // =====================================================
-  // ENTER ATTENDANCE CODE
-  // =====================================================
 
+  // put the attendance code into the row input
   function enterAttendanceCode(noteLink, code) {
     const row = noteLink.closest("tr");
     if (!row) return;
@@ -218,10 +210,8 @@
     input.dispatchEvent(new KeyboardEvent("keyup", { bubbles: true }));
   }
 
-  // =====================================================
-  // MODAL CONTROL
-  // =====================================================
 
+  // closes the currently open note window
   function closeAttendanceNoteModal() {
     const closeBtn = document.querySelector(
       ".k-window .k-window-action .k-i-close"
@@ -229,10 +219,8 @@
     if (closeBtn) closeBtn.click();
   }
 
-  // =====================================================
-  // MAIN (WORKING VERSION)
-  // =====================================================
 
+  // main loop that goes through all notes
   async function processAttendanceNotes() {
     const noteLinks = Array.from(
       document.querySelectorAll("a.abtn[onclick^='AttNote']")
@@ -247,6 +235,7 @@
       await sleep(NOTE_LOAD_DELAY);
 
       let reasons = [];
+
       try {
         await waitForNoteIframe();
         reasons = getReasonsFromOpenNote();
@@ -266,10 +255,10 @@
       await sleep(BETWEEN_NOTES_DELAY);
     }
 
-      // ✅ FINAL close — only once, after all processing
-      closeLastAttendanceModal();
+    // clean up last popup if needed
+    closeLastAttendanceModal();
 
-
-    console.log("✅ All attendance notes processed.");
+    console.log("All attendance notes processed.");
   }
+
 })();
