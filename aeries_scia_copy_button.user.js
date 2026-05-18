@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Aeries SCIA Copy Button
 // @namespace    soc-hub
-// @version      1.0
+// @version      1.1
 // @description  Adds copy button to SCIA
 // @match        https://santaclaracoe.aeries.net/admin/UserDefinedStudentData.aspx*
 // @grant        none
