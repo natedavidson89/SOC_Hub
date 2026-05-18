@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Aeries Attendance Note Auto Button
 // @namespace    soc-hub
-// @version      1.0
+// @version      1.1
 // @description  Adds automation button to attenance management
 // @match        https://santaclaracoe.aeries.net/admin/AttendanceManagement.aspx*
 // @grant        none
@@ -11,6 +11,7 @@
 
 (function () {
   "use strict";
+  console.log('✅ Tampermonkey Attendance Automation script LOADED');
 
   // =====================================================
   // CONFIG
